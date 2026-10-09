@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TFI Signals</title>
+<meta name="description" content="Information about your business is scattered across the internet. See it in one place. TFI Signals shows what the public can find about a local business, in plain language. Free to use today.">
+<meta property="og:title" content="TFI Signals: See your business information in one place">
+<meta property="og:description" content="A plain-language look at what the public can find about a local business: what's there, what's missing, and what's worth a closer look.">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0D0D0D;
+    --surface: #1A1A1A;
+    --ink: #E0E0E0;
+    --muted: #A3A3A3;
+    --line: #2D2D2D;
+    --brand: #F26419;
+    --brand-hover: #D9540D;
+    --brand-ink: #0D0D0D;
+    --brand-soft: #1A1A1A;
+    --accent: #F26419;
+    --mono: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+  }
+  a { color: var(--brand); }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+  header.site {
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+  }
+  header.site .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 14px; padding-bottom: 14px; gap: 12px;
+  }
+  .wordmark { font-weight: 700; font-size: 1.1rem; letter-spacing: 0.01em; color: var(--ink); text-decoration: none; }
+  .wordmark span { color: var(--brand); }
+  .wordmark small { display: block; font-family: var(--mono); font-weight: 500; font-size: 0.74rem; color: var(--muted); letter-spacing: 0; line-height: 1.2; margin-top: 2px; }
+  .eyebrow { color: var(--brand); font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; font-size: 0.8rem; margin: 0 0 12px; }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 6px;
+    background: var(--brand);
+    color: var(--brand-ink);
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--brand);
+    font-size: 1rem;
+  }
+  .btn:hover { background: var(--brand-hover); border-color: var(--brand-hover); }
+  .btn.ghost { background: transparent; color: var(--brand); }
+  .btn.small { padding: 8px 16px; font-size: 0.95rem; }
+  a:focus-visible, summary:focus-visible, .btn:focus-visible {
+    outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px;
+  }
+
+  .hero { padding: 56px 0 40px; }
+  .hero h1 {
+    font-size: clamp(2rem, 6vw, 3.1rem);
+    line-height: 1.12;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+    max-width: 16em;
+  }
+  .hero p.lead { font-size: 1.18rem; color: var(--muted); max-width: 36em; margin: 0 0 26px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .fine { color: var(--muted); font-size: 0.93rem; margin: 14px 0 0; }
+
+  section { padding: 38px 0; border-top: 1px solid var(--line); }
+  section h2 { font-size: 1.55rem; line-height: 1.25; margin: 0 0 14px; }
+  section p { margin: 0 0 14px; max-width: 40em; }
+
+  .cards { display: grid; gap: 14px; grid-template-columns: 1fr; margin-top: 18px; }
+  @media (min-width: 720px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 20px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 1.08rem; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+
+  ul.checks {
+    list-style: none; margin: 14px 0 0; padding: 0;
+    display: grid; gap: 8px; grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) { ul.checks { grid-template-columns: 1fr 1fr; } }
+  ul.checks li {
+    background: var(--brand-soft);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.97rem;
+  }
+
+  .limits { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; max-width: 40em; }
+  .limits li { padding-left: 22px; position: relative; }
+  .limits li::before {
+    content: ""; position: absolute; left: 0; top: 0.7em;
+    width: 9px; height: 9px; border-radius: 50%; background: var(--accent);
+  }
+
+  details {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 4px 18px;
+    margin-bottom: 10px;
+    max-width: 44em;
+  }
+  summary { cursor: pointer; font-weight: 600; padding: 12px 0; }
+  details p { margin: 0 0 14px; color: var(--muted); }
+
+  .final {
+    text-align: left;
+    background: var(--brand-soft);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--brand);
+    border-radius: 6px;
+    padding: 28px 22px;
+    margin: 10px 0 0;
+  }
+  .final h2 { margin-top: 0; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 44px; color: var(--muted); font-size: 0.93rem; }
+  footer p { margin: 0 0 8px; max-width: 46em; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="wordmark" href="#top">TFI <span>Signals</span><small>by Thompson Foundry Innovations</small></a>
+    <a class="btn small" href="https://tfi-evidence-flow.base44.app/search">Check a business</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="hero">
+      <p class="eyebrow">A local business check from Thompson Foundry Innovations</p>
+      <h1>Information about your business is scattered across the internet. See it in one place.</h1>
+      <p class="lead">Maps, search results, social pages, directories, and old listings pile up over the years, often set up by different people at different times. TFI Signals finds what the public can see and gathers it into one page, in plain language. Checks are free right now, and there is nothing to buy.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://tfi-evidence-flow.base44.app/search">Check a business</a>
+        <a class="btn ghost" href="#how">How it works</a>
+      </div>
+      <p class="fine">No account needed. A check usually takes one to three minutes.</p>
+    </div>
+
+    <section id="why">
+      <h2>Why we built this</h2>
+      <p>Running a business leaves little time to keep track of every profile and listing with your name on it. Some are yours. Some were created by others. Some are out of date. When customers search, they see whatever is there, not whatever you intended.</p>
+      <p>We built Signals to gather what is public into one page you can read in a few minutes, so you can see what is there, what is missing, and what is worth a closer look. It is meant for owners, managers, and anyone who looks after a business's online presence.</p>
+      <p>We are Thompson Foundry Innovations, a Fullerton company working on this problem for local businesses. Signals is a starting point, and we would like your feedback.</p>
+    </section>
+
+    <section id="how">
+      <h2>How it works</h2>
+      <p>Type in a business name and city. Signals finds the business, asks you to confirm it is the right one, then looks across public sources and writes up what it found.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>It finds what is public</h3>
+          <p>Maps, search results, the business's own website, social profiles and listings, all in one place.</p>
+        </div>
+        <div class="card">
+          <h3>It explains in plain words</h3>
+          <p>Each finding is a sentence anyone can read, with how much it matters and where it came from.</p>
+        </div>
+        <div class="card">
+          <h3>It is honest about gaps</h3>
+          <p>If a check finds nothing, we say so, and only for that source. "Not found" never means "does not exist."</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="covers">
+      <h2>What a check looks at</h2>
+      <p>Each check runs these, and the list will grow as we learn what helps.</p>
+      <ul class="checks">
+        <li>Google Maps listing</li>
+        <li>Web search results</li>
+        <li>The business's website</li>
+        <li>Secure connection (HTTPS)</li>
+        <li>Mobile-friendly setup</li>
+        <li>Website speed</li>
+        <li>Search-engine labels</li>
+        <li>Social media preview</li>
+        <li>Social profiles</li>
+        <li>Public email addresses</li>
+        <li>Address consistency</li>
+        <li>News mentions</li>
+        <li>Reference sources</li>
+        <li>Open map data</li>
+        <li>Look-alike web addresses</li>
+      </ul>
+    </section>
+
+    <section id="limits">
+      <h2>What Signals will not do</h2>
+      <ul class="limits">
+        <li>It reads public information only. It never signs in to anything, and it does not change your business or any listing.</li>
+        <li>Results can be incomplete or mistaken. Some pages, such as Facebook and LinkedIn, cannot be read directly, so a profile that is not shown may simply be one we could not see.</li>
+        <li>It does not judge your business. It shows what the public sources say at the time of the check.</li>
+        <li>We are a small startup, so some sources are not practical for us to check yet. We will add more over time.</li>
+      </ul>
+    </section>
+
+    <section id="who">
+      <h2>Who is behind it</h2>
+      <p>TFI Signals is made by Thompson Foundry Innovations in Fullerton, California. We research practical challenges facing local businesses and build technology and services in response to what the evidence shows. Signals is one way we are learning, and one way we hope to be useful.</p>
+      <p>We are an early, small project starting in Fullerton. Anyone can run a check, and if you are outside Fullerton, we would still like to hear how it went.</p>
+      <p>Running a check never obligates you to buy anything. If a finding is wrong, or you want to tell us what would help, we would like to hear from you.</p>
+      <p><a class="btn" href="mailto:contact@thompsonfoundryinnovations.com?subject=TFI%20Signals%20feedback&body=Business%20checked%20(name%20and%20city)%3A%0A%0AWhat%20was%20wrong%2C%20missing%2C%20or%20helpful%3A%0A">Send feedback</a></p>
+    </section>
+
+    <section id="faq">
+      <h2>Questions</h2>
+      <details>
+        <summary>Is it really free?</summary>
+        <p>For now, yes. Checks are free today and there is nothing to sign up for. To keep them available to everyone, each visitor can run a limited number of new checks per day. If that changes, this page will say so.</p>
+      </details>
+      <details>
+        <summary>Who can check a business?</summary>
+        <p>Anyone. It is meant for owners and for the people who manage a business's online presence.</p>
+      </details>
+      <details>
+        <summary>Do I need an account?</summary>
+        <p>No. Accounts are not available yet. We may offer them later so an owner can keep results in one place and see what has changed over time. If we do, we will say clearly what is free and what is not.</p>
+      </details>
+      <details>
+        <summary>What does it do with what I enter?</summary>
+        <p>It uses the business name and city to run the check from public sources. The result is saved so repeat checks are quick. Links you add to a report yourself stay in your browser.</p>
+      </details>
+      <details>
+        <summary>What if something in the report is wrong?</summary>
+        <p>Please tell us at <a href="mailto:contact@thompsonfoundryinnovations.com">contact@thompsonfoundryinnovations.com</a>. Public sources are sometimes out of date or wrong, and your correction helps us understand where.</p>
+      </details>
+    </section>
+
+    <section>
+      <div class="final">
+        <h2>Take a look at your business.</h2>
+        <p>It takes a minute or two, and right now there is nothing to buy.</p>
+        <a class="btn" href="https://tfi-evidence-flow.base44.app/search">Check a business</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>TFI Signals</strong>, powered by TFI Discover Engine.</p>
+    <p>Thompson Foundry Innovations, Fullerton, California. <a href="mailto:contact@thompsonfoundryinnovations.com">contact@thompsonfoundryinnovations.com</a></p>
+    <p>Information shown reflects what public sources reported at the time it was collected.</p>
+  </div>
+</footer>
+
+</body>
+</html>
