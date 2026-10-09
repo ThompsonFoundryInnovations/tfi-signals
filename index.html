@@ -32,7 +32,8 @@
   header.site .wrap{height:92px;display:flex;align-items:center;justify-content:space-between;gap:20px}
   .brand{display:flex;align-items:center;gap:16px;text-decoration:none;min-width:0}
   .brand img{display:block;height:66px;width:auto;object-fit:contain}
-  .brand .tag{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.17em;font-weight:800;font-size:.82rem;color:var(--orange);padding-left:16px;border-left:1px solid var(--line);white-space:nowrap}
+  .brand .tag{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:1.3rem;color:var(--text);padding-left:18px;border-left:1px solid var(--line);white-space:nowrap}
+  .brand .tag b{color:var(--orange);font-weight:800}
 
   .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:8px;border:1px solid var(--orange);background:var(--orange);color:#111;text-decoration:none;font-weight:800;font-size:.81rem;letter-spacing:.12em;text-transform:uppercase}
   .btn:hover,.btn:focus{border-color:var(--orange2);outline:none}
@@ -80,10 +81,8 @@
   @media(max-width:850px){
     .wrap{width:min(100% - 32px,var(--max))}
     header.site .wrap{height:84px}
-    .brand img{height:42px}
-    .brand{gap:10px}.brand .tag{font-size:.62rem;letter-spacing:.1em;padding-left:8px}
-    .btn.small{padding:0 12px;white-space:nowrap;font-size:.7rem;letter-spacing:.08em}
-    header.site .wrap{gap:10px}
+    .brand img{height:46px}
+    .brand{gap:10px}.brand .tag{font-size:1rem;letter-spacing:.1em;padding-left:12px}
     .hero,.section{padding:72px 0}
     h1{font-size:clamp(2.35rem,10vw,3.45rem)}
     .card{padding:26px}
@@ -101,8 +100,7 @@
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="TFI Signals by Thompson Foundry Innovations"><img src="https://thompsonfoundryinnovations.com/assets/tfi-logo-transparent.png" alt="Thompson Foundry Innovations"><span class="tag">TFI Signals</span></a>
-    <a class="btn small" href="https://tfi-evidence-flow.base44.app/search">Check a business</a>
+    <a class="brand" href="#top" aria-label="TFI Signals by Thompson Foundry Innovations"><img src="https://thompsonfoundryinnovations.com/assets/tfi-logo-transparent.png" alt="Thompson Foundry Innovations"><span class="tag">TFI <b>Signals</b></span></a>
   </div>
 </header>
 
@@ -212,13 +210,6 @@
       </details>
     </div></section>
 
-    <section class="section"><div class="wrap">
-      <div class="final">
-        <h2>Take a look at your business.</h2>
-        <p>It takes a minute or two, and right now there is nothing to buy.</p>
-        <a class="btn" href="https://tfi-evidence-flow.base44.app/search">Check a business</a>
-      </div>
-    </div></section>
 
 </main>
 
