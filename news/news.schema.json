@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Signals Business News data",
+  "description": "The news page shows at most 5 stories, newest first. Stories with missing or invalid fields are skipped, never shown half-filled.",
+  "type": "object",
+  "required": [
+    "stories"
+  ],
+  "properties": {
+    "updated": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "YYYY-MM-DD date the file was last updated, or null."
+    },
+    "stories": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "headline",
+          "category",
+          "published",
+          "summary",
+          "whyItMatters",
+          "nextStep",
+          "sourceUrl",
+          "lastVerified"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Optional stable identifier."
+          },
+          "headline": {
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "Technology",
+              "Online visibility",
+              "Funding",
+              "Business operations",
+              "Regulatory"
+            ]
+          },
+          "published": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "Date the original source was published."
+          },
+          "summary": {
+            "type": "string",
+            "description": "Short, plain summary of what happened."
+          },
+          "whyItMatters": {
+            "type": "string",
+            "description": "Why it matters to independent business owners."
+          },
+          "nextStep": {
+            "type": "string",
+            "description": "One practical step an owner can take."
+          },
+          "sourceName": {
+            "type": "string",
+            "description": "Optional name of the original source."
+          },
+          "sourceUrl": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://"
+          },
+          "lastVerified": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "Date we last checked the story against the original source."
+          }
+        }
+      }
+    }
+  }
+}

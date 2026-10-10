@@ -1,37 +1,228 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Signals Business News: sourced developments and practical insights for independent business owners.">
-  <title>Business News | TFI Signals</title>
-  <style>
-    :root{color-scheme:dark;--bg:#0b0c0e;--panel:#151619;--line:#303136;--text:#f5f5f4;--muted:#aaa9a6;--orange:#ef913c}
-    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit}a:hover{color:var(--orange)}.wrap{width:min(1100px,calc(100% - 40px));margin:auto}
-    header{border-bottom:1px solid var(--line)}header .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0}.brand{text-decoration:none;font-weight:800;letter-spacing:.08em}.brand span,.eyebrow{color:var(--orange)}nav{display:flex;gap:22px;flex-wrap:wrap}nav a{font-size:.9rem;text-decoration:none;color:#c7c7c7}nav a[aria-current]{color:var(--orange)}
-    main{padding:76px 0 100px}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}h1{font-size:clamp(2.6rem,7vw,5.2rem);line-height:1.06;letter-spacing:-.05em;margin:16px 0 22px;max-width:800px}h2{font-size:1.5rem;line-height:1.3}.lead{max-width:650px;color:var(--muted);font-size:1.15rem}.intro{padding-bottom:55px;border-bottom:1px solid var(--line)}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:36px 0 24px;flex-wrap:wrap}.toolbar h2{margin:0}.note{font-size:.85rem;color:var(--muted)}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.story{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:27px;display:flex;flex-direction:column;gap:15px}.story:first-child{grid-column:1/-1}.meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:.78rem;color:var(--muted)}.category{color:var(--orange);text-transform:uppercase;letter-spacing:.09em;font-weight:800}.story h3{font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.27;letter-spacing:-.025em;margin:0}.story p{margin:0;color:#c4c4c2}.story strong{color:var(--text)}.story .bottom{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:.85rem}.source{color:var(--orange);text-underline-offset:3px}.state{padding:24px;border:1px solid var(--line);border-radius:10px;color:var(--muted)}.disclosure{margin-top:38px;padding-top:22px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.85rem}
-    @media(max-width:700px){header .wrap{align-items:flex-start;flex-direction:column}nav{gap:15px}main{padding-top:50px}.grid{grid-template-columns:1fr}.story:first-child{grid-column:auto}.story{padding:22px}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Signals Business News | TFI Signals</title>
+<meta name="description" content="A short, curated list of current stories that matter to independent business owners, each linked to its original source.">
+<link rel="canonical" href="https://tfi-signals.com/news/">
+<meta property="og:title" content="Signals Business News | TFI Signals">
+<meta property="og:description" content="A short, curated list of current stories that matter to independent business owners, each linked to its original source.">
+<meta property="og:url" content="https://tfi-signals.com/news/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: one calm reading column on a dark ground, orange only for labels and the one action. Single dark look by choice, matching tfi-signals.com. */
+:root{
+  color-scheme:dark;
+  --bg:#080a0c; --panel:#101419; --line:#2b333c;
+  --text:#f4f5f6; --body:#c9ced4; --muted:#a9afb7; --orange:#ff6b1a; --orange2:#ff9b61;
+  --amber-bg:#1d150c; --amber-line:#70401f;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);line-height:1.65;padding-inline:16px;padding-block:0 72px}
+a{color:var(--orange2)}
+a:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.bar{max-width:760px;margin:0 auto;padding-block:20px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.95rem;color:var(--text)}
+.brand b{color:var(--orange)}
+/* Navigation is a plain list so a News link can be added beside Hub later. */
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+nav a{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);text-decoration:none}
+nav a[aria-current]{color:var(--orange2)}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:44px;padding-top:44px}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;font-weight:700;color:var(--orange);margin:0 0 14px}
+h1{font-size:clamp(2rem,6vw,2.9rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 18px;color:var(--text);text-wrap:balance}
+h2{font-size:1.5rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 14px;color:var(--text);text-wrap:balance}
+p{margin:0 0 14px}
+.lead{font-size:1.15rem;color:#d6d9de;max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted)}
+.cards{display:grid;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;min-width:0}
+.card h3{margin:0 0 8px;font-size:1.08rem;color:var(--text)}
+.card p{margin:0}
+.card p + p{margin-top:10px}
+.two{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:720px){.two{grid-template-columns:1fr 1fr}}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+ol.steps li::before{content:counter(s);font-family:var(--mono);font-weight:800;color:var(--orange);font-size:1.15rem;line-height:1.5}
+ol.steps strong{color:var(--text)}
+.methods{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.methods li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.methods .m{color:var(--text);font-weight:600}
+.methods .d{color:var(--muted);font-size:.95rem;flex:1 1 280px}
+.warn{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:14px;padding:22px 24px}
+.warn .tag{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:var(--orange2);margin:0 0 8px}
+.warn h2{font-size:1.25rem}
+.warn ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.gap ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--body)}
+.signals{border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;background:linear-gradient(145deg,var(--panel),#0c0f12)}
+.signals p{margin:0;max-width:46ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:8px;background:var(--orange);color:#111;text-decoration:none;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--orange)}
+.btn:hover{border-color:var(--orange2)}
+.sources{padding:0;margin:0;list-style:none;display:grid;gap:8px;font-size:.95rem}
+.sources a{overflow-wrap:anywhere}
+.fine{border-top:1px solid var(--line);padding-top:20px;font-size:.88rem;color:var(--muted)}
+.fine p{margin:0 0 8px}
+
+.crumbs{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 18px}
+.crumbs a{color:var(--muted)}
+.related{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.related a{display:block;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--text);font-weight:500}
+.related a:hover{border-color:var(--orange)}
+.list{margin:0;padding-left:20px;display:grid;gap:6px}
+
+.topbar{position:sticky;top:0;z-index:20;background:rgba(8,10,12,.95);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);margin-inline:-16px;padding-inline:16px;border-bottom:1px solid var(--line)}
+.topbar .bar{border-bottom:0;padding-block:14px}
+.bar{flex-wrap:wrap;row-gap:6px}
+@media(max-width:600px){.topbar .bar{padding-block:8px;row-gap:0}.bar .brand{flex-basis:100%}.gnav{gap:0 16px}.gnav a{padding:8px 2px}.bar .gnav a.gbtn{display:none}}
+html{scroll-padding-top:90px}
+.bar .brand{text-decoration:none}
+.gnav{display:flex;flex-wrap:wrap;align-items:center;gap:2px 22px}
+.gnav a{color:var(--text);text-decoration:none;font-weight:600;font-size:1rem;padding:10px 2px;border-bottom:2px solid transparent}
+.gnav a:hover,.gnav a[aria-current]{border-color:var(--orange)}
+.gnav a.gbtn{background:var(--orange);color:#111;border-radius:8px;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;border:1px solid var(--orange)}
+.gnav a.gbtn:hover{border-color:var(--orange2)}
+.gnav a:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.bar .gnav a{font-family:var(--sans);text-transform:none;letter-spacing:normal;font-size:1rem}
+.bar .gnav a.gbtn{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em}
+
+.res{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.res li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:4px}
+.res a.t{color:var(--text);font-weight:600;text-decoration:none;overflow-wrap:anywhere}
+.res a.t:hover{color:var(--orange2);text-decoration:underline}
+.res .d{color:var(--muted);font-size:.95rem}
+.res .g{font-size:.88rem}
+
+.cats{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.cats li{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.stories{display:grid;gap:18px}
+.story{background:linear-gradient(145deg,var(--panel),#0c0f12);border:1px solid var(--line);border-radius:16px;padding:26px;min-width:0;display:grid;gap:14px}
+.story .top{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between}
+.story .cat{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:var(--orange)}
+.story .date{font-size:.9rem;color:var(--muted)}
+.story h2{margin:0;font-size:1.5rem;line-height:1.2}
+.story p{margin:0}
+.story .sum{color:var(--body);font-size:1.03rem}
+.story .pair{display:grid;gap:12px}
+@media(min-width:760px){.story .pair{grid-template-columns:1fr 1fr}}
+.story .box{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:16px 18px;min-width:0}
+.story .box h3{margin:0 0 6px;font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;color:var(--orange2)}
+.story .foot{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;font-size:.9rem;color:var(--muted)}
+.story .foot a{overflow-wrap:anywhere}
+.empty{border:1px dashed var(--line);border-radius:16px;padding:32px 28px;display:grid;gap:12px;background:linear-gradient(145deg,var(--panel),#0c0f12)}
+.empty h2{margin:0}
+.empty p{margin:0;max-width:60ch}
+.empty .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--orange)}
+.std{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.std li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.std b{color:var(--text)}
+</style>
 </head>
 <body>
-<header><div class="wrap"><a class="brand" href="/">TFI <span>SIGNALS</span></a><nav aria-label="Main navigation"><a href="/">Signals</a><a href="/learn/">Learn</a><a href="/news/" aria-current="page">News</a></nav></div></header>
-<main class="wrap"><section class="intro"><div class="eyebrow">Signals Business News</div><h1>Business news that matters.</h1><p class="lead">Important developments, useful tools, and opportunities for independent business owners. Selected for relevance, with sources you can check.</p></section><section aria-labelledby="latest-title"><div class="toolbar"><h2 id="latest-title">Current highlights</h2><span id="updated" class="note" aria-live="polite"></span></div><div id="stories" class="grid" aria-live="polite"><div class="state">Loading stories…</div></div></section><p class="disclosure">Signals Business News summarizes publicly available information for general education. Check original sources for details, eligibility, deadlines, and updates. News summaries are not legal, financial, or professional advice.</p></main>
-<footer><div class="wrap">© <span id="year"></span> Thompson Foundry Innovations · <a href="/">TFI Signals</a></div></footer>
+<header class="topbar">
+<div class="bar">
+  <a class="brand" href="/">TFI <b>Signals</b></a>
+  <nav class="gnav" aria-label="Main"><a href="/learn/">Learn</a><a href="/resources/">Resources</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav>
+</div>
+</header>
+<main>
+  <header>
+    <p class="eyebrow">Business news</p>
+    <h1>Signals Business News</h1>
+    <p class="lead">A short, curated list of current stories that matter to independent business owners. Each one links to the original source and says when we last verified it.</p>
+    <ul class="cats" aria-label="Topics we cover">
+      <li>Technology</li>
+      <li>Online visibility</li>
+      <li>Funding</li>
+      <li>Business operations</li>
+      <li>Regulatory</li>
+    </ul>
+  </header>
+
+  <section aria-label="News stories">
+    <div id="news-root" aria-live="polite"></div>
+    <noscript><div class="empty"><h2>News needs JavaScript</h2><p>This page loads its stories with JavaScript. You can still read our guides and resources.</p><div class="acts"><a class="btn" href="/learn/">Browse the guides</a><a class="btn ghost" href="/resources/">See resources</a></div></div></noscript>
+    <p class="date" id="news-updated" style="margin:14px 0 0;color:var(--muted);font-size:.9rem"></p>
+  </section>
+
+  <section aria-labelledby="how">
+    <h2 id="how">How stories are chosen</h2>
+    <ul class="std">
+      <li><b>Up to five at a time.</b> We would rather show a few that matter than many that do not.</li>
+      <li><b>Current and relevant.</b> Technology, online visibility, funding, business operations and regulatory developments that affect independent businesses.</li>
+      <li><b>Sourced.</b> Every story links to the original source, and we show the date we last verified it.</li>
+      <li><b>Plain.</b> Each has a short summary, why it matters to an owner, and one practical next step.</li>
+    </ul>
+  </section>
+
+  <footer class="fine">
+    <p>General information for business owners, not legal, financial or professional advice. TFI Signals is independent and is not affiliated with the sources it links to. Details change, so check the original source before you act.</p>
+    <p>Thompson Foundry Innovations, Fullerton, California.</p>
+  </footer>
+</main>
 <script>
-'use strict';
-document.getElementById('year').textContent=new Date().getFullYear();
-const root=document.getElementById('stories'),updated=document.getElementById('updated');
-const text=(tag,value,cls)=>{const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=value;return el};
-const date=s=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(s||''))return '';const d=new Date(s+'T12:00:00Z');return Number.isNaN(d.getTime())?'':d.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'})};
-function validURL(s){try{const u=new URL(s);return ['https:','http:'].includes(u.protocol)?u.href:null}catch{return null}}
-function render(items){root.replaceChildren();if(!items.length){root.append(text('div','No news stories are published yet. Please check back soon.','state'));return}
- for(const item of items.slice(0,5)){
-  const card=document.createElement('article');card.className='story';const meta=document.createElement('div');meta.className='meta';meta.append(text('span',item.category||'Business', 'category'));if(date(item.published))meta.append(text('span',date(item.published)));card.append(meta);
-  card.append(text('h3',item.headline));card.append(text('p',item.summary));if(item.why_it_matters){const p=document.createElement('p');p.append(text('strong','Why it matters: '),document.createTextNode(item.why_it_matters));card.append(p)}if(item.action){const p=document.createElement('p');p.append(text('strong','What you can do: '),document.createTextNode(item.action));card.append(p)}
-  const bottom=document.createElement('div');bottom.className='bottom';const url=validURL(item.source_url);if(url){const a=text('a',item.source_name||'Original source','source');a.href=url;a.target='_blank';a.rel='noopener noreferrer';bottom.append(a)}if(date(item.verified)){bottom.append(text('span',' · Verified '+date(item.verified)))}card.append(bottom);root.append(card)
- }
-}
-fetch('./news.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('News file unavailable');return r.json()}).then(data=>{if(!data||!Array.isArray(data.stories))throw Error('Invalid news data');const live=data.stories.filter(s=>s&&s.status==='published'&&s.headline&&s.summary&&validURL(s.source_url));live.sort((a,b)=>(b.priority||0)-(a.priority||0)||(b.published||'').localeCompare(a.published||''));render(live);if(date(data.last_updated))updated.textContent='Last updated '+date(data.last_updated)}).catch(()=>{root.replaceChildren(text('div','News is temporarily unavailable. Please check back later.','state'))});
+(function(){
+  var CATS=["Technology", "Online visibility", "Funding", "Business operations", "Regulatory"];
+  var MAX=5;
+  var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  function fmt(d){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d||"");if(!m)return d||"";var mi=parseInt(m[2],10)-1;if(mi<0||mi>11)return d;return MONTHS[mi]+" "+parseInt(m[3],10)+", "+m[1];}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  function okUrl(u){return typeof u==="string"&&/^https?:\/\//i.test(u);}
+  function valid(s){
+    if(!s||typeof s!=="object")return false;
+    var req=["headline","category","published","summary","whyItMatters","nextStep","sourceUrl","lastVerified"];
+    for(var i=0;i<req.length;i++){if(typeof s[req[i]]!=="string"||!s[req[i]].trim())return false;}
+    return CATS.indexOf(s.category)>-1&&okUrl(s.sourceUrl);
+  }
+  function box(h,t){var b=el("div","box");b.appendChild(el("h3",null,h));b.appendChild(el("p",null,t));return b;}
+  function card(s){
+    var a=el("article","story");
+    var top=el("div","top");top.appendChild(el("span","cat",s.category));top.appendChild(el("span","date","Published "+fmt(s.published)));a.appendChild(top);
+    a.appendChild(el("h2",null,s.headline));
+    a.appendChild(el("p","sum",s.summary));
+    var pair=el("div","pair");pair.appendChild(box("Why it matters to owners",s.whyItMatters));pair.appendChild(box("A practical next step",s.nextStep));a.appendChild(pair);
+    var f=el("div","foot");
+    var l=el("a",null,"Read the original"+(s.sourceName?": "+s.sourceName:""));l.href=s.sourceUrl;l.rel="noopener";f.appendChild(l);
+    f.appendChild(el("span",null,"Last verified: "+fmt(s.lastVerified)));
+    a.appendChild(f);return a;
+  }
+  function empty(msg){
+    var d=el("div","empty");
+    d.appendChild(el("h2",null,msg.title));
+    d.appendChild(el("p",null,msg.text));
+    var acts=el("div","acts");
+    var a1=el("a","btn","Browse the guides");a1.href="/learn/";acts.appendChild(a1);
+    var a2=el("a","btn ghost","See resources");a2.href="/resources/";acts.appendChild(a2);
+    d.appendChild(acts);return d;
+  }
+  window.renderNews=function(data){
+    var root=document.getElementById("news-root"),upd=document.getElementById("news-updated");
+    root.textContent="";
+    var list=(data&&Array.isArray(data.stories)?data.stories:[]).filter(function(s){var v=valid(s);if(!v&&window.console)console.warn("News story skipped: missing or invalid fields",s&&s.id);return v;});
+    list.sort(function(a,b){return a.published<b.published?1:a.published>b.published?-1:0;});
+    list=list.slice(0,MAX);
+    if(!list.length){
+      root.appendChild(empty({title:"No stories right now",text:"We publish a story only after we have read the original source and confirmed it. Nothing has met that standard yet, so there is nothing to show. Check back soon."}));
+      upd.textContent="";return;
+    }
+    var w=el("div","stories");list.forEach(function(s){w.appendChild(card(s));});root.appendChild(w);
+    upd.textContent=data.updated?"Page last updated: "+fmt(data.updated):"";
+  };
+  window.loadNews=function(){
+    if(window.__NEWS_DATA){window.renderNews(window.__NEWS_DATA);return;}
+    fetch("/news/news.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(window.renderNews).catch(function(){
+      var root=document.getElementById("news-root");root.textContent="";
+      root.appendChild(empty({title:"News could not be loaded",text:"Something went wrong loading this page. Please try again in a little while."}));
+    });
+  };
+  window.loadNews();
+})();
 </script>
-</body></html>
+</body>
+</html>
