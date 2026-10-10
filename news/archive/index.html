@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Signals Business News | TFI Signals</title>
-<meta name="description" content="A short, curated list of current stories that matter to independent business owners, each linked to its original source.">
-<link rel="canonical" href="https://tfi-signals.com/news/">
-<meta property="og:title" content="Signals Business News | TFI Signals">
-<meta property="og:description" content="A short, curated list of current stories that matter to independent business owners, each linked to its original source.">
-<meta property="og:url" content="https://tfi-signals.com/news/">
+<title>News Archive | TFI Signals</title>
+<meta name="description" content="Search every story published on Signals Business News, newest first, each linked to its original source.">
+<link rel="canonical" href="https://tfi-signals.com/news/archive/">
+<meta property="og:title" content="News Archive | TFI Signals">
+<meta property="og:description" content="Search every story published on Signals Business News, newest first, each linked to its original source.">
+<meta property="og:url" content="https://tfi-signals.com/news/archive/">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
@@ -155,32 +155,23 @@ html{scroll-padding-top:90px}
 </header>
 <main>
   <header>
+    <p class="crumbs"><a href="/news/">News</a> / Archive</p>
     <p class="eyebrow">Business news</p>
-    <h1>Signals Business News</h1>
-    <p class="lead">A short, curated list of current stories that matter to independent business owners. Each one links to the original source and says when we last verified it.</p>
-    <ul class="cats" aria-label="Browse by topic">
-      <li><a href="/news/archive/?category=Technology">Technology</a></li>
-      <li><a href="/news/archive/?category=Online%20visibility">Online visibility</a></li>
-      <li><a href="/news/archive/?category=Funding">Funding</a></li>
-      <li><a href="/news/archive/?category=Business%20operations">Business operations</a></li>
-      <li><a href="/news/archive/?category=Regulatory">Regulatory</a></li>
-    </ul>
+    <h1>News Archive</h1>
+    <p class="lead">Every story we have published, newest first. Older stories stay here with the date we last verified them, so check the original source before you act on one.</p>
   </header>
 
-  <section aria-label="News stories">
-    <div id="news-root" aria-live="polite"></div>
-    <noscript><div class="empty"><h2>News needs JavaScript</h2><p>This page loads its stories with JavaScript. You can still read our guides and resources.</p><div class="acts"><a class="btn" href="/learn/">Browse the guides</a><a class="btn ghost" href="/resources/">See resources</a></div></div></noscript>
-    <p class="upd" id="news-updated"></p>
+  <section class="tools" aria-label="Search and filter">
+    <label class="srch" for="q"><span>Search the archive</span>
+      <input id="q" type="search" placeholder="Try a word like SBA, Google or franchise" autocomplete="off">
+    </label>
+    <div class="chipsrow" role="group" aria-label="Filter by topic" id="chips"></div>
   </section>
 
-  <section aria-labelledby="how">
-    <h2 id="how">How stories are chosen</h2>
-    <ul class="std">
-      <li><b>Up to five at a time.</b> We would rather show a few that matter than many that do not. Earlier stories stay in the archive.</li>
-      <li><b>Current and relevant.</b> Technology, online visibility, funding, business operations and regulatory developments that affect independent businesses.</li>
-      <li><b>Sourced.</b> Every story links to the original source, and we show the date we last verified it.</li>
-      <li><b>Plain.</b> Each has a short summary, why it matters to an owner, and one practical next step.</li>
-    </ul>
+  <section aria-label="Results">
+    <p class="count" id="count" aria-live="polite"></p>
+    <div id="results"></div>
+    <p class="morewrap"><button type="button" class="btn ghost" id="more" hidden>Show more</button></p>
   </section>
 
   <footer class="fine">
@@ -191,28 +182,59 @@ html{scroll-padding-top:90px}
 <script src="/news/news.js"></script>
 <script>
 (function(){
-  var N=window.TFINews;
-  window.renderNews=function(data){
-    var root=document.getElementById("news-root"),upd=document.getElementById("news-updated");
-    root.textContent="";
-    var list=N.sortNew(N.clean(data&&data.stories)).slice(0,N.MAX);
-    if(!list.length){
-      root.appendChild(N.emptyBox("No stories right now","We publish a story only after we have read the original source and confirmed it. Nothing is featured at the moment. Check back soon, or look through earlier stories in the archive.",true));
-      upd.textContent="";return;
-    }
-    var w=N.el("div","stories");list.forEach(function(s){w.appendChild(N.card(s));});root.appendChild(w);
-    var p=N.el("p","browse");var a=N.el("a","btn","Browse all news");a.href="/news/archive/";p.appendChild(a);
-    p.appendChild(N.el("span","browsehint","Search every story we have published."));root.appendChild(p);
-    upd.textContent=data.updated?"Page last updated: "+N.fmt(data.updated):"";
-  };
-  window.loadNews=function(){
-    if(window.__NEWS_DATA){window.renderNews(window.__NEWS_DATA);return;}
-    N.getJSON("/news/news.json").then(window.renderNews).catch(function(){
-      var root=document.getElementById("news-root");root.textContent="";
-      root.appendChild(N.emptyBox("News could not be loaded","Something went wrong loading this page. Please try again in a little while.",true));
+  var N=window.TFINews,PAGE=20,shown=PAGE,all=[],featured={};
+  var q=document.getElementById("q"),chips=document.getElementById("chips"),count=document.getElementById("count"),res=document.getElementById("results"),more=document.getElementById("more");
+  var cat="";
+  function params(){var p=new URLSearchParams(window.location.search);var c=p.get("category")||"";cat=N.CATS.indexOf(c)>-1?c:"";q.value=(p.get("q")||"").slice(0,100);}
+  function sync(){
+    try{var p=new URLSearchParams();if(q.value.trim())p.set("q",q.value.trim());if(cat)p.set("category",cat);var s=p.toString();history.replaceState(null,"",window.location.pathname+(s?"?"+s:""));}catch(e){}
+  }
+  function buildChips(){
+    chips.textContent="";
+    ["All topics"].concat(N.CATS).forEach(function(c,i){
+      var b=N.el("button","chip",c);b.type="button";var val=i===0?"":c;
+      b.setAttribute("aria-pressed",String(cat===val));
+      b.addEventListener("click",function(){cat=val;shown=PAGE;buildChips();draw();});
+      chips.appendChild(b);
     });
-  };
-  window.loadNews();
+  }
+  function match(s){
+    if(cat&&s.category!==cat)return false;
+    var terms=q.value.toLowerCase().split(/\s+/).filter(Boolean);
+    if(!terms.length)return true;
+    var hay=[s.headline,s.summary,s.whyItMatters,s.nextStep,s.sourceName||"",s.category].join(" ").toLowerCase();
+    return terms.every(function(t){return hay.indexOf(t)>-1;});
+  }
+  function draw(){
+    sync();
+    var list=all.filter(match);
+    res.textContent="";
+    var total=list.length;
+    count.textContent=total===0?"No stories match.":(total===1?"1 story":total+" stories")+(cat||q.value.trim()?" found":" in the archive");
+    if(total===0){
+      var d=N.el("div","empty");d.appendChild(N.el("h2",null,all.length?"Nothing matches that search":"The archive is empty"));
+      d.appendChild(N.el("p",null,all.length?"Try fewer words, or choose All topics.":"Stories will appear here once they are published."));
+      if(all.length){var b=N.el("button","btn ghost","Clear search and filters");b.type="button";b.addEventListener("click",function(){q.value="";cat="";shown=PAGE;buildChips();draw();});d.appendChild(b);}
+      res.appendChild(d);more.hidden=true;return;
+    }
+    var w=N.el("div","stories");
+    list.slice(0,shown).forEach(function(s){w.appendChild(N.card(s,{featured:!!featured[N.key(s)]}));});
+    res.appendChild(w);
+    more.hidden=total<=shown;
+    more.textContent="Show more ("+(total-shown>0?total-shown:0)+" left)";
+  }
+  more.addEventListener("click",function(){shown+=PAGE;draw();});
+  var t;q.addEventListener("input",function(){clearTimeout(t);t=setTimeout(function(){shown=PAGE;draw();},150);});
+  function start(a,n){
+    var seen={},out=[];
+    N.clean(a&&a.stories).concat(N.clean(n&&n.stories)).forEach(function(s){var k=N.key(s);if(!seen[k]){seen[k]=1;out.push(s);}});
+    all=N.sortNew(out);
+    N.sortNew(N.clean(n&&n.stories)).slice(0,N.MAX).forEach(function(s){featured[N.key(s)]=1;});
+    params();buildChips();draw();
+  }
+  window.startArchive=start;
+  if(window.__ARCHIVE_DATA){start(window.__ARCHIVE_DATA,window.__NEWS_DATA||{stories:[]});return;}
+  Promise.all([N.getJSON("/news/archive.json").catch(function(){return {stories:[]};}),N.getJSON("/news/news.json").catch(function(){return {stories:[]};})]).then(function(r){start(r[0],r[1]);});
 })();
 </script>
 </body>
