@@ -1,4 +1,60 @@
 {
-  "updated": null,
-  "stories": []
+  "updated": "2026-10-10",
+  "stories": [
+    {
+      "headline": "SBA disaster loan deadline approaches for businesses affected by Oakland fire",
+      "category": "Funding",
+      "published": "2026-10-09",
+      "summary": "The U.S. Small Business Administration says eligible small businesses and private nonprofits affected by the January 19 Oakland Apartment Fire have until November 10, 2026, to apply for Economic Injury Disaster Loans. The declaration covers Alameda, Contra Costa, San Francisco, San Joaquin, San Mateo, Santa Clara, and Stanislaus counties.",
+      "whyItMatters": "Eligible businesses may qualify for working-capital loans tied to disaster-related economic losses even without physical property damage. Assistance is limited to qualifying applicants affected by this disaster.",
+      "nextStep": "If your business was affected, check the SBA announcement, confirm eligibility, and review the November 10 application deadline.",
+      "sourceName": "U.S. Small Business Administration",
+      "sourceUrl": "https://legacy.sba.gov/article/2026/10/09/sba-relief-still-available-california-small-businesses-private-nonprofits-affected-oakland-apartment",
+      "lastVerified": "2026-10-10"
+    },
+    {
+      "headline": "FTC announces changes to wholesale T-shirt pricing agreement",
+      "category": "Business operations",
+      "published": "2026-10-08",
+      "summary": "Following an FTC investigation, T-shirt manufacturer Gildan and distributor S&S amended an agreement that had restricted Gildan from offering certain pricing and discounts to competing distributors. The FTC says it has closed its investigation following the change.",
+      "whyItMatters": "Wholesale pricing arrangements can affect competition and purchasing choices for apparel retailers, printers, and other small businesses. The announcement does not establish that retail prices will fall.",
+      "nextStep": "If you purchase wholesale apparel, compare supplier terms and available pricing rather than relying on a single distributor.",
+      "sourceName": "Federal Trade Commission",
+      "sourceUrl": "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-secures-fair-pricing-protections-taking-action-against-major-wholesale-t-shirt-distributors",
+      "lastVerified": "2026-10-10"
+    },
+    {
+      "headline": "FTC announces proposed franchise settlements over alleged earnings claims",
+      "category": "Regulatory",
+      "published": "2026-10-05",
+      "summary": "The FTC announced proposed settlements involving Premier Franchising Group and Franchise Fastlane over allegations of misleading representations about a martial arts franchise opportunity, including potential earnings and operating demands. The proposed orders require court approval to become final.",
+      "whyItMatters": "People considering a franchise need reliable information about earnings potential, expenses, and the time required to operate a business. The FTC's allegations are not themselves final judicial findings.",
+      "nextStep": "Before buying a franchise, carefully review the Franchise Disclosure Document and independently investigate financial performance claims.",
+      "sourceName": "Federal Trade Commission",
+      "sourceUrl": "https://www.ftc.gov/news-events/news/press-releases/2026/10/premier-martial-arts-franchisor-its-former-franchise-sales-organization-settle-ftc-charges-companies",
+      "lastVerified": "2026-10-10"
+    },
+    {
+      "headline": "IRS shares practical cybersecurity steps during awareness month",
+      "category": "Technology",
+      "published": "2026-10-02",
+      "summary": "The IRS encouraged businesses and taxpayers to strengthen account security through unique passwords, multifactor authentication, software updates, secure backups, and caution around phishing and fake invoices.",
+      "whyItMatters": "A compromised business email, payroll system, or tax account can expose sensitive information and disrupt operations, even at very small businesses.",
+      "nextStep": "Check that multifactor authentication is enabled for your business email, financial accounts, and payroll tools, and verify payment-change requests through a trusted channel.",
+      "sourceName": "Internal Revenue Service",
+      "sourceUrl": "https://www.irs.gov/newsroom/irs-reminder-cybersecurity-awareness-month-offers-simple-steps-to-protect-tax-data",
+      "lastVerified": "2026-10-10"
+    },
+    {
+      "headline": "Google expands protections against fake reviews and incorrect Maps edits",
+      "category": "Online visibility",
+      "published": "2026-04-16",
+      "summary": "Google described expanded systems for identifying review scams and blocking inappropriate Maps edits, along with proactive email alerts intended to help verified, active Business Profile owners review important suggested changes. The announcement dates to April, but the guidance remains relevant.",
+      "whyItMatters": "Customers rely on accurate Maps listings to find businesses. False reviews and incorrect hours or contact details can affect trust and customer visits.",
+      "nextStep": "Verify your Google Business Profile, check your listing for accuracy, and watch for legitimate notifications about proposed changes.",
+      "sourceName": "Google",
+      "sourceUrl": "https://blog.google/products-and-platforms/products/maps/new-ways-were-protecting-businesses-on-maps/",
+      "lastVerified": "2026-10-10"
+    }
+  ]
 }
