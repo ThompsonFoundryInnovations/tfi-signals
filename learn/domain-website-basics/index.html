@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Domain and website basics: who owns your web address, and when it renews | TFI Signals Hub</title>
+<meta name="description" content="Your domain is your web address, such as yourbusiness.com. It is rented, not bought once, and the renewal is easy to forget. Here is what ICANN, the body that oversees domain names, says about renewals and what you can check.">
+<link rel="canonical" href="https://tfi-signals.com/learn/domain-website-basics/">
+<meta property="og:title" content="Domain and website basics: who owns your web address, and when it renews | TFI Signals Hub">
+<meta property="og:description" content="Your domain is your web address, such as yourbusiness.com. It is rented, not bought once, and the renewal is easy to forget. Here is what ICANN, the body that oversees domain names, says about renewals and what you can check.">
+<meta property="og:url" content="https://tfi-signals.com/learn/domain-website-basics/">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: one calm reading column on a dark ground, orange only for labels and the one action. Single dark look by choice, matching tfi-signals.com. */
+:root{
+  color-scheme:dark;
+  --bg:#080a0c; --panel:#101419; --line:#2b333c;
+  --text:#f4f5f6; --body:#c9ced4; --muted:#a9afb7; --orange:#ff6b1a; --orange2:#ff9b61;
+  --amber-bg:#1d150c; --amber-line:#70401f;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);line-height:1.65;padding-inline:16px;padding-block:0 72px}
+a{color:var(--orange2)}
+a:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.bar{max-width:760px;margin:0 auto;padding-block:20px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.95rem;color:var(--text)}
+.brand b{color:var(--orange)}
+/* Navigation is a plain list so a News link can be added beside Hub later. */
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+nav a{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);text-decoration:none}
+nav a[aria-current]{color:var(--orange2)}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:44px;padding-top:44px}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;font-weight:700;color:var(--orange);margin:0 0 14px}
+h1{font-size:clamp(2rem,6vw,2.9rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 18px;color:var(--text);text-wrap:balance}
+h2{font-size:1.5rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 14px;color:var(--text);text-wrap:balance}
+p{margin:0 0 14px}
+.lead{font-size:1.15rem;color:#d6d9de;max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted)}
+.cards{display:grid;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;min-width:0}
+.card h3{margin:0 0 8px;font-size:1.08rem;color:var(--text)}
+.card p{margin:0}
+.card p + p{margin-top:10px}
+.two{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:720px){.two{grid-template-columns:1fr 1fr}}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+ol.steps li::before{content:counter(s);font-family:var(--mono);font-weight:800;color:var(--orange);font-size:1.15rem;line-height:1.5}
+ol.steps strong{color:var(--text)}
+.methods{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.methods li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.methods .m{color:var(--text);font-weight:600}
+.methods .d{color:var(--muted);font-size:.95rem;flex:1 1 280px}
+.warn{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:14px;padding:22px 24px}
+.warn .tag{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:var(--orange2);margin:0 0 8px}
+.warn h2{font-size:1.25rem}
+.warn ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.gap ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--body)}
+.signals{border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;background:linear-gradient(145deg,var(--panel),#0c0f12)}
+.signals p{margin:0;max-width:46ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:8px;background:var(--orange);color:#111;text-decoration:none;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--orange)}
+.btn:hover{border-color:var(--orange2)}
+.sources{padding:0;margin:0;list-style:none;display:grid;gap:8px;font-size:.95rem}
+.sources a{overflow-wrap:anywhere}
+.fine{border-top:1px solid var(--line);padding-top:20px;font-size:.88rem;color:var(--muted)}
+.fine p{margin:0 0 8px}
+
+.crumbs{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 18px}
+.crumbs a{color:var(--muted)}
+.related{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.related a{display:block;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--text);font-weight:500}
+.related a:hover{border-color:var(--orange)}
+.list{margin:0;padding-left:20px;display:grid;gap:6px}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="brand" href="/" style="text-decoration:none">TFI <b>Signals</b></a>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="/learn/" aria-current="page">Hub</a></li>
+      <!-- A News link will be added here later. -->
+    </ul>
+  </nav>
+</div>
+
+<main>
+  <header>
+    <p class="crumbs"><a href="/learn/">Hub</a> / Your website and name online</p>
+    <p class="eyebrow">Your website and name online</p>
+    <h1>Domain and website basics: who owns your web address, and when it renews</h1>
+    <p class="lead">Your domain is your web address, such as yourbusiness.com. It is rented, not bought once, and the renewal is easy to forget. Here is what ICANN, the body that oversees domain names, says about renewals and what you can check.</p>
+    <div class="meta">
+      <span>Last checked: October 10, 2026</span>
+      <span>Sources: ICANN</span>
+      <span>About a 3 minute read</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="says">
+    <h2 id="says">What ICANN says</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Your registrar handles renewals</h3>
+        <p>The company you registered the domain with, or its reseller, handles renewals, cancellations and refunds. ICANN says that if you do not know who your registrar is, you can search for it at whois.icann.org.</p>
+      </div>
+      <div class="card">
+        <h3>Reminders go to your contact details</h3>
+        <p>ICANN says registrars must send two renewal reminders, about one month and one week before expiration, and a notice within five days after. Those go to the contact details on file, so out-of-date details can mean missed reminders.</p>
+      </div>
+      <div class="card">
+        <h3>Keep your details accurate</h3>
+        <p>Domain owners are expected to give accurate contact details and to correct them promptly when they change. ICANN's summary says intentionally giving inaccurate details, or not answering a registrar's accuracy inquiry within fifteen days, can lead to the registration being cancelled.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="exp">
+    <h2 id="exp">If a domain expires</h2>
+    <p>ICANN describes a timeline after expiration. Your registrar may delete the domain, which starts a 30 day redemption period. During it the domain can be redeemed or renewed, which may involve a redemption fee. If it is not restored, it enters a 5 day pending delete stage, and then the name is released and anyone can register it first come, first served.</p>
+    <p>ICANN also says you have the right to transfer an expired domain, and that your registrar must restore it first if it is in the redemption period.</p>
+  </section>
+
+  <section aria-labelledby="todo">
+    <h2 id="todo">What you can check today</h2>
+    <ol class="steps">
+      <li><div><strong>Find out who your registrar is.</strong> Look through your email for receipts or reminders about the domain, or search for it at whois.icann.org as ICANN suggests.</div></li>
+      <li><div><strong>Sign in and look at the expiration date.</strong> Confirm the date and whether auto-renew is on. Check the payment method on file has not expired.</div></li>
+      <li><div><strong>Check the contact email and phone.</strong> Make sure reminders reach an inbox you read. If the domain was set up by someone else, such as a web designer, confirm the account is in your name.</div></li>
+      <li><div><strong>Write the date down.</strong> Put the renewal date somewhere you will see it, like a calendar.</div></li>
+    </ol>
+  </section>
+
+  <section class="warn" aria-labelledby="comp">
+    <p class="tag">If something went wrong</p>
+    <h2 id="comp">Complaints about renewals</h2>
+    <p>ICANN lists a Domain Renewal Complaint Form for cases such as not receiving reminders, a renewed domain that does not work, or not being able to redeem a domain during the grace period. It says to allow 3 to 5 business days for a response. For a payment that did not result in a renewal, ICANN's page suggests consulting an attorney or a consumer protection agency, and says this is not legal advice.</p>
+  </section>
+
+  <section class="card gap" aria-labelledby="unknown">
+    <h2 id="unknown">What ICANN's pages do not say</h2>
+    <ul>
+      <li>How much a domain should cost, or what a redemption fee is. Fees are set by each registrar.</li>
+      <li>How long your particular registrar waits before deleting an expired domain.</li>
+      <li>How to set up a website or email on a domain. That depends on the companies you use.</li>
+    </ul>
+    <p style="margin-top:12px">Your registrar's help pages are the place to ask about those.</p>
+  </section>
+
+  <section class="signals" aria-label="How Signals helps">
+    <p><strong style="color:var(--text)">Not sure which website points to your business?</strong> A Signals check shows the website that public sources point to, and tests it, so you can see whether it is the one you expect.</p>
+    <a class="btn" href="https://app.tfi-signals.com/search">Check a business</a>
+  </section>
+
+  <section aria-labelledby="rel">
+    <h2 id="rel">Related guides</h2>
+    <ul class="related">
+      <li><a href="/learn/different-phone-or-address/">Different phone numbers or addresses on different sites</a></li>
+      <li><a href="/learn/claim-verify-google-profile/">How to claim and verify your Google Business Profile</a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="src">
+    <h2 id="src">Sources</h2>
+    <ul class="sources">
+      <li><a href="https://www.vip.icann.org/resources/pages/domain-name-renewal-expiration-faqs-2018-12-07-en">ICANN: Domain name renewal and expiration FAQs</a></li>
+      <li><a href="https://www.icann.org/en/contracted-parties/accredited-registrars/registrar-accreditation-agreement/registrant-rights-and-responsibilities-under-the-2009-registrar-accreditation-agreement-27-06-2011-en">ICANN: Registrant rights and responsibilities under the 2009 Registrar Accreditation Agreement</a></li>
+    </ul>
+  </section>
+
+  <footer class="fine">
+    <p>General information for business owners, not legal or professional advice. TFI Signals is independent and is not affiliated with ICANN or any registrar. Rules and fees change, so check your registrar and ICANN's pages for the latest.</p>
+    <p>Thompson Foundry Innovations, Fullerton, California.</p>
+  </footer>
+</main>
+</body>
+</html>

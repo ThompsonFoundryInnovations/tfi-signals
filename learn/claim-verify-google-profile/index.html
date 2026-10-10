@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to claim and verify your Google Business Profile | TFI Signals Hub</title>
+<meta name="description" content="Verifying is how Google confirms that you manage a business. Until a profile is verified, you can&#x27;t change details like the business name or hours, or take part in customer reviews and messages.">
+<link rel="canonical" href="https://tfi-signals.com/learn/claim-verify-google-profile/">
+<meta property="og:title" content="How to claim and verify your Google Business Profile | TFI Signals Hub">
+<meta property="og:description" content="Verifying is how Google confirms that you manage a business. Until a profile is verified, you can&#x27;t change details like the business name or hours, or take part in customer reviews and messages.">
+<meta property="og:url" content="https://tfi-signals.com/learn/claim-verify-google-profile/">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: one calm reading column on a dark ground, orange only for labels and the one action. Single dark look by choice, matching tfi-signals.com. */
+:root{
+  color-scheme:dark;
+  --bg:#080a0c; --panel:#101419; --line:#2b333c;
+  --text:#f4f5f6; --body:#c9ced4; --muted:#a9afb7; --orange:#ff6b1a; --orange2:#ff9b61;
+  --amber-bg:#1d150c; --amber-line:#70401f;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);line-height:1.65;padding-inline:16px;padding-block:0 72px}
+a{color:var(--orange2)}
+a:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.bar{max-width:760px;margin:0 auto;padding-block:20px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.95rem;color:var(--text)}
+.brand b{color:var(--orange)}
+/* Navigation is a plain list so a News link can be added beside Hub later. */
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+nav a{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);text-decoration:none}
+nav a[aria-current]{color:var(--orange2)}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:44px;padding-top:44px}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;font-weight:700;color:var(--orange);margin:0 0 14px}
+h1{font-size:clamp(2rem,6vw,2.9rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 18px;color:var(--text);text-wrap:balance}
+h2{font-size:1.5rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 14px;color:var(--text);text-wrap:balance}
+p{margin:0 0 14px}
+.lead{font-size:1.15rem;color:#d6d9de;max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted)}
+.cards{display:grid;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;min-width:0}
+.card h3{margin:0 0 8px;font-size:1.08rem;color:var(--text)}
+.card p{margin:0}
+.card p + p{margin-top:10px}
+.two{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:720px){.two{grid-template-columns:1fr 1fr}}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+ol.steps li::before{content:counter(s);font-family:var(--mono);font-weight:800;color:var(--orange);font-size:1.15rem;line-height:1.5}
+ol.steps strong{color:var(--text)}
+.methods{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.methods li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.methods .m{color:var(--text);font-weight:600}
+.methods .d{color:var(--muted);font-size:.95rem;flex:1 1 280px}
+.warn{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:14px;padding:22px 24px}
+.warn .tag{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:var(--orange2);margin:0 0 8px}
+.warn h2{font-size:1.25rem}
+.warn ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.gap ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--body)}
+.signals{border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;background:linear-gradient(145deg,var(--panel),#0c0f12)}
+.signals p{margin:0;max-width:46ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:8px;background:var(--orange);color:#111;text-decoration:none;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--orange)}
+.btn:hover{border-color:var(--orange2)}
+.sources{padding:0;margin:0;list-style:none;display:grid;gap:8px;font-size:.95rem}
+.sources a{overflow-wrap:anywhere}
+.fine{border-top:1px solid var(--line);padding-top:20px;font-size:.88rem;color:var(--muted)}
+.fine p{margin:0 0 8px}
+
+.crumbs{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 18px}
+.crumbs a{color:var(--muted)}
+.related{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.related a{display:block;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--text);font-weight:500}
+.related a:hover{border-color:var(--orange)}
+.list{margin:0;padding-left:20px;display:grid;gap:6px}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="brand" href="/" style="text-decoration:none">TFI <b>Signals</b></a>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="/learn/" aria-current="page">Hub</a></li>
+      <!-- A News link will be added here later. -->
+    </ul>
+  </nav>
+</div>
+
+<main>
+  <header>
+    <p class="crumbs"><a href="/learn/">Hub</a> / Getting found</p>
+    <p class="eyebrow">Getting found</p>
+    <h1>How to claim and verify your Google Business Profile</h1>
+    <p class="lead">Verifying is how Google confirms that you manage a business. Until a profile is verified, you can't change details like the business name or hours, or take part in customer reviews and messages.</p>
+    <div class="meta">
+      <span>Last checked: October 10, 2026</span>
+      <span>Sources: Google Business Profile Help</span>
+      <span>About a 4 minute read</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="start">
+    <h2 id="start">Start with the situation you are in</h2>
+    <div class="two">
+      <div class="card">
+        <h3>Nobody manages the profile yet</h3>
+        <p>Find your profile, choose a verification method, wait for Google's review, and fix any issues it reports. The steps are below.</p>
+      </div>
+      <div class="card">
+        <h3>Someone else already manages it</h3>
+        <p>You can request access. Google emails the current owner, who has 3 days to respond. If they do not, you may be able to claim the profile yourself. Jump to "If someone else manages it."</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="steps">
+    <h2 id="steps">Verifying a profile, step by step</h2>
+    <ol class="steps">
+      <li><div><strong>Find your profile.</strong> Sign in with the Google account you want to manage the business with. A Google account is required.</div></li>
+      <li><div><strong>Choose a verification method.</strong> Google decides which methods you are offered, and you can't change them. See the next section.</div></li>
+      <li><div><strong>Wait for review.</strong> Google says review takes up to 5 business days, sometimes longer.</div></li>
+      <li><div><strong>Fix any issues.</strong> If Google reports a problem, follow the on-screen instructions in your profile.</div></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="methods">
+    <h2 id="methods">The ways Google can verify you</h2>
+    <p>Which of these you see depends on your business type, public information, region and business hours. Not every business gets every option.</p>
+    <ul class="methods">
+      <li><span class="m">Phone or text</span><span class="d">A code goes to the business phone. Automated phone menus can't receive it, so someone has to be able to answer the call or read the text.</span></li>
+      <li><span class="m">Email</span><span class="d">You need access to the email address shown on the verification screen.</span></li>
+      <li><span class="m">Live video call</span><span class="d">Only during your location's business hours. You need to be at the business and show your location and that you own it, such as signage, products or employee-only areas. Not available to all businesses.</span></li>
+      <li><span class="m">Video recording</span><span class="d">Google recommends it where it is offered. The steps are on a separate Google page.</span></li>
+      <li><span class="m">Postcard by mail</span><span class="d">Not available to all businesses. See the next section.</span></li>
+    </ul>
+    <p style="margin-top:14px">Some businesses can be verified instantly through Google Search Console or bulk verification.</p>
+  </section>
+
+  <section class="warn" aria-labelledby="card">
+    <p class="tag">If you get a postcard</p>
+    <h2 id="card">Rules that are easy to break</h2>
+    <ul>
+      <li>Most codes arrive within 14 days. The code has 5 digits and expires after 30 days.</li>
+      <li>Do not edit the business name, address or category while you wait. That makes the code stop working.</li>
+      <li>Do not request a new code unless you have to. A new request cancels the mailed one and can make the process longer.</li>
+      <li>Never share the code with anyone. Google says it will never ask for your verification code.</li>
+    </ul>
+  </section>
+
+  <section class="gap" aria-labelledby="gap">
+    <h2 id="gap">If the postcard does not arrive</h2>
+    <p>Google's page does not give a specific fix. It says to try another verification method if one is shown, and otherwise to contact Google support. Avoid editing the profile or requesting a new code while you decide.</p>
+  </section>
+
+  <section aria-labelledby="else">
+    <h2 id="else">If someone else manages it</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Request access</h3>
+        <p>Go to business.google.com/add and enter your business name and address. Select your business from the list. If it says "Someone else may manage this Business Profile," choose Request Access, fill out the form and submit it.</p>
+        <p>The current owner gets an email and has 3 days to respond. You get a confirmation email and can check the status by signing in to your profile.</p>
+      </div>
+      <div class="card">
+        <h3>If they say no, or do not answer</h3>
+        <p>If the request is denied, you can still suggest an edit to the profile or appeal the decision. If the owner does not respond within 3 days, you may be able to claim the profile. Open the confirmation email, select View request, then Verify, and follow the steps. Google notes that this option is not always available.</p>
+      </div>
+      <div class="card">
+        <h3>No physical location</h3>
+        <p>Businesses that serve customers without a storefront contact Google support and choose "Transfer ownership of listing."</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card gap" aria-labelledby="unknown">
+    <h2 id="unknown">What Google's pages do not say</h2>
+    <ul>
+      <li>Whether any of this costs money.</li>
+      <li>What to do when a postcard never arrives after 14 days, or after the code expires.</li>
+      <li>How Google decides to approve or deny an ownership request, or how long an appeal takes.</li>
+      <li>Exactly which business types get which methods.</li>
+    </ul>
+    <p style="margin-top:12px">If one of these matters to you, Google support is the place to ask.</p>
+  </section>
+
+  <section class="signals" aria-label="How Signals helps">
+    <p><strong style="color:var(--text)">Wondering what is already out there?</strong> A Signals check shows what public sources say about your business, so you can see whether a profile exists before you start.</p>
+    <a class="btn" href="https://app.tfi-signals.com/search">Check a business</a>
+  </section>
+
+  <section aria-labelledby="rel">
+    <h2 id="rel">Related guides</h2>
+    <ul class="related">
+      <li><a href="/learn/bing-places-apple-business/">Bing Places and Apple Business: two more places customers find you</a></li>
+      <li><a href="/learn/google-suggested-edits/">Someone suggested a change to your Google Business Profile</a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="src">
+    <h2 id="src">Sources</h2>
+    <ul class="sources">
+      <li><a href="https://support.google.com/business/answer/7107242?hl=en">Google Business Profile Help: Verify your business on Google</a></li>
+      <li><a href="https://support.google.com/business/answer/7105241?hl=en">Google Business Profile Help: Verify your business on Google (steps)</a></li>
+      <li><a href="https://support.google.com/business/answer/4566671?hl=en">Google Business Profile Help: Request ownership of a Business Profile</a></li>
+    </ul>
+  </section>
+
+  <footer class="fine">
+    <p>General information for business owners, not legal or professional advice. TFI Signals is independent and is not affiliated with Google. Google's rules change, so check its help pages for the latest.</p>
+    <p>Thompson Foundry Innovations, Fullerton, California.</p>
+  </footer>
+</main>
+</body>
+</html>

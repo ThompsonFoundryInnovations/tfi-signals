@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What &quot;we did not find it&quot; means | TFI Signals Hub</title>
+<meta name="description" content="You will see this wording throughout a Signals report. It is a plain statement about what we saw.">
+<link rel="canonical" href="https://tfi-signals.com/learn/we-did-not-find-it/">
+<meta property="og:title" content="What &quot;we did not find it&quot; means | TFI Signals Hub">
+<meta property="og:description" content="You will see this wording throughout a Signals report. It is a plain statement about what we saw.">
+<meta property="og:url" content="https://tfi-signals.com/learn/we-did-not-find-it/">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: one calm reading column on a dark ground, orange only for labels and the one action. Single dark look by choice, matching tfi-signals.com. */
+:root{
+  color-scheme:dark;
+  --bg:#080a0c; --panel:#101419; --line:#2b333c;
+  --text:#f4f5f6; --body:#c9ced4; --muted:#a9afb7; --orange:#ff6b1a; --orange2:#ff9b61;
+  --amber-bg:#1d150c; --amber-line:#70401f;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);line-height:1.65;padding-inline:16px;padding-block:0 72px}
+a{color:var(--orange2)}
+a:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.bar{max-width:760px;margin:0 auto;padding-block:20px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.95rem;color:var(--text)}
+.brand b{color:var(--orange)}
+/* Navigation is a plain list so a News link can be added beside Hub later. */
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+nav a{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);text-decoration:none}
+nav a[aria-current]{color:var(--orange2)}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:44px;padding-top:44px}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;font-weight:700;color:var(--orange);margin:0 0 14px}
+h1{font-size:clamp(2rem,6vw,2.9rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 18px;color:var(--text);text-wrap:balance}
+h2{font-size:1.5rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 14px;color:var(--text);text-wrap:balance}
+p{margin:0 0 14px}
+.lead{font-size:1.15rem;color:#d6d9de;max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted)}
+.cards{display:grid;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;min-width:0}
+.card h3{margin:0 0 8px;font-size:1.08rem;color:var(--text)}
+.card p{margin:0}
+.card p + p{margin-top:10px}
+.two{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:720px){.two{grid-template-columns:1fr 1fr}}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+ol.steps li::before{content:counter(s);font-family:var(--mono);font-weight:800;color:var(--orange);font-size:1.15rem;line-height:1.5}
+ol.steps strong{color:var(--text)}
+.methods{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.methods li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.methods .m{color:var(--text);font-weight:600}
+.methods .d{color:var(--muted);font-size:.95rem;flex:1 1 280px}
+.warn{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:14px;padding:22px 24px}
+.warn .tag{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:var(--orange2);margin:0 0 8px}
+.warn h2{font-size:1.25rem}
+.warn ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.gap ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--body)}
+.signals{border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;background:linear-gradient(145deg,var(--panel),#0c0f12)}
+.signals p{margin:0;max-width:46ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:8px;background:var(--orange);color:#111;text-decoration:none;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--orange)}
+.btn:hover{border-color:var(--orange2)}
+.sources{padding:0;margin:0;list-style:none;display:grid;gap:8px;font-size:.95rem}
+.sources a{overflow-wrap:anywhere}
+.fine{border-top:1px solid var(--line);padding-top:20px;font-size:.88rem;color:var(--muted)}
+.fine p{margin:0 0 8px}
+
+.crumbs{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 18px}
+.crumbs a{color:var(--muted)}
+.related{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.related a{display:block;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--text);font-weight:500}
+.related a:hover{border-color:var(--orange)}
+.list{margin:0;padding-left:20px;display:grid;gap:6px}
+
+.shot{background:#080a0c;border:1px solid var(--line);border-radius:18px;overflow:hidden;max-width:760px;margin:0 auto;width:100%}
+.shot .label{background:var(--amber-bg);border-bottom:1px solid var(--amber-line);color:var(--orange2);font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px;display:flex;justify-content:space-between;gap:4px 12px;flex-wrap:wrap}
+.shot .in{padding:22px;display:grid;gap:14px}
+.shot .p{background:#0e1216;border:1px solid var(--line);border-radius:14px;padding:18px 20px;min-width:0}
+.shot .k{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:800;margin:0 0 6px}
+.shot .nm{font-size:1.7rem;line-height:1.15;letter-spacing:-.02em;color:var(--text);font-weight:700;margin:0 0 4px}
+.shot .sub{color:var(--muted);margin:0 0 8px}
+.shot p{margin:0 0 8px;font-size:.95rem}
+.shot p:last-child{margin-bottom:0}
+.shot .row2{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.shot .fakebtn{border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text);font-weight:700}
+.shot .match{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:10px}
+.shot .match b{color:var(--text);font-weight:500;display:block}
+.shot .match span{display:block;color:var(--muted);font-size:.88rem;overflow-wrap:anywhere}
+.shot .match em{font-style:normal;color:var(--orange);font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+.shot .score{display:inline-block;border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:6px 0}
+.shot .score b{font-size:1.9rem;color:var(--text)}
+.shot .score i{font-style:normal;color:var(--muted)}
+.shot ol{margin:6px 0 0;padding-left:20px;font-size:.93rem;color:var(--muted)}
+.cap{font-size:.88rem;color:var(--muted);text-align:center;margin:10px 0 0}
+.note{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:14px;padding:18px 22px}
+.note p{margin:0}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="brand" href="/" style="text-decoration:none">TFI <b>Signals</b></a>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="/learn/" aria-current="page">Hub</a></li>
+      <!-- A News link will be added here later. -->
+    </ul>
+  </nav>
+</div>
+
+<main>
+  <header>
+    <p class="crumbs"><a href="/learn/">Hub</a> / Start here</p>
+    <p class="eyebrow">Start here</p>
+    <h1>What "we did not find it" means</h1>
+    <p class="lead">You will see this wording throughout a Signals report. It is a plain statement about what we saw.</p>
+    <div class="meta">
+      <span>Last updated: October 10, 2026</span>
+      <span>Source: how TFI Signals works today</span>
+      <span>About a 4 minute read</span>
+    </div>
+  </header>
+
+  <div class="note"><p><strong style="color:var(--text)">Signals is still being designed and built.</strong> This guide describes the report as it works today. Some things will change and new features are being added soon, and this guide will be updated to match.</p></div>
+
+  <section aria-labelledby="means">
+    <h2 id="means">What it means</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>We looked and did not find it</h3>
+        <p>Every report says it plainly: "Treat 'not found' as 'we did not find it,' not as proof that it does not exist." It is a statement about what one check saw, not a warning and not a verdict.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="forms">
+    <h2 id="forms">Where you will see it</h2>
+    <div class="cards">
+      <div class="card"><h3>In the summary</h3><p>For example: "No Google Maps listing was found for this business by this check." or "No phone number was found by these checks."</p></div>
+      <div class="card"><h3>In the count at the bottom</h3><p>The report counts public checks that "found nothing." Those checks ran and did not find anything.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="why">
+    <h2 id="why">Why a listing might not show up</h2>
+    <div class="cards">
+      <div class="card"><h3>There is no listing</h3><p>The business may never have been added to that source.</p></div>
+      <div class="card"><h3>It exists but is not visible to public search</h3><p>Some listings can only be seen after signing in, or are hidden from search tools.</p></div>
+      <div class="card"><h3>The source cannot be read directly</h3><p>Pages such as Facebook and LinkedIn cannot be read directly. A profile that is not shown may simply be one we could not see.</p></div>
+      <div class="card"><h3>The name or address is written differently</h3><p>A listing under an older name, an abbreviation or a different address may not look like a match.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="diff">
+    <h2 id="diff">"Found nothing" is different from "could not be checked"</h2>
+    <div class="two">
+      <div class="card"><h3>Found nothing</h3><p>The check ran, looked, and did not find it.</p></div>
+      <div class="card"><h3>Could not be checked</h3><p>We could not get an answer at all, so we say nothing about whether it exists.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="do">
+    <h2 id="do">What you can do</h2>
+    <ol class="steps">
+      <li><div><strong>Search for yourself.</strong> Open the source and search your business name and city. If you find a listing, check that the details are right.</div></li>
+      <li><div><strong>Decide if it matters to you.</strong> Whether to be listed somewhere is your decision. The main sources are the ones most customers use.</div></li>
+      <li><div><strong>If you want a listing,</strong> use the guides for claiming and adding one, linked below.</div></li>
+      <li><div><strong>If something we reported is wrong,</strong> tell us. The report has a feedback link at the bottom, and corrections help us understand where sources are out of date.</div></li>
+    </ol>
+  </section>
+
+  <section class="signals" aria-label="Run a check">
+    <p><strong style="color:var(--text)">Want to see one for your business?</strong> Type in a business name and city. A check usually takes one to three minutes.</p>
+    <a class="btn" href="https://app.tfi-signals.com/search">Check a business</a>
+  </section>
+
+  <section aria-labelledby="rel">
+    <h2 id="rel">Related guides</h2>
+    <ul class="related">
+      <li><a href="/learn/how-to-read-a-signals-report/">How to read a Signals report</a></li>
+      <li><a href="/learn/claim-verify-google-profile/">How to claim and verify your Google Business Profile</a></li>
+      <li><a href="/learn/bing-places-apple-business/">Bing Places and Apple Business</a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="src">
+    <h2 id="src">Source</h2>
+    <p style="color:var(--muted)">This guide describes how TFI Signals works today. It does not rely on an outside source. Information in a report reflects what public sources showed at the time of the check.</p>
+  </section>
+
+  <footer class="fine">
+    <p>General information for business owners, not legal or professional advice.</p>
+    <p>Thompson Foundry Innovations, Fullerton, California.</p>
+  </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bing Places and Apple Business: two more places customers find you | TFI Signals Hub</title>
+<meta name="description" content="Customers also look for businesses in Bing and in Apple Maps. Each has an official place where owners can manage how the business appears.">
+<link rel="canonical" href="https://tfi-signals.com/learn/bing-places-apple-business/">
+<meta property="og:title" content="Bing Places and Apple Business: two more places customers find you | TFI Signals Hub">
+<meta property="og:description" content="Customers also look for businesses in Bing and in Apple Maps. Each has an official place where owners can manage how the business appears.">
+<meta property="og:url" content="https://tfi-signals.com/learn/bing-places-apple-business/">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: one calm reading column on a dark ground, orange only for labels and the one action. Single dark look by choice, matching tfi-signals.com. */
+:root{
+  color-scheme:dark;
+  --bg:#080a0c; --panel:#101419; --line:#2b333c;
+  --text:#f4f5f6; --body:#c9ced4; --muted:#a9afb7; --orange:#ff6b1a; --orange2:#ff9b61;
+  --amber-bg:#1d150c; --amber-line:#70401f;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);line-height:1.65;padding-inline:16px;padding-block:0 72px}
+a{color:var(--orange2)}
+a:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.bar{max-width:760px;margin:0 auto;padding-block:20px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.95rem;color:var(--text)}
+.brand b{color:var(--orange)}
+/* Navigation is a plain list so a News link can be added beside Hub later. */
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+nav a{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);text-decoration:none}
+nav a[aria-current]{color:var(--orange2)}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:44px;padding-top:44px}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;font-weight:700;color:var(--orange);margin:0 0 14px}
+h1{font-size:clamp(2rem,6vw,2.9rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 18px;color:var(--text);text-wrap:balance}
+h2{font-size:1.5rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 14px;color:var(--text);text-wrap:balance}
+p{margin:0 0 14px}
+.lead{font-size:1.15rem;color:#d6d9de;max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted)}
+.cards{display:grid;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;min-width:0}
+.card h3{margin:0 0 8px;font-size:1.08rem;color:var(--text)}
+.card p{margin:0}
+.card p + p{margin-top:10px}
+.two{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:720px){.two{grid-template-columns:1fr 1fr}}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+ol.steps li::before{content:counter(s);font-family:var(--mono);font-weight:800;color:var(--orange);font-size:1.15rem;line-height:1.5}
+ol.steps strong{color:var(--text)}
+.methods{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.methods li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.methods .m{color:var(--text);font-weight:600}
+.methods .d{color:var(--muted);font-size:.95rem;flex:1 1 280px}
+.warn{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:14px;padding:22px 24px}
+.warn .tag{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:var(--orange2);margin:0 0 8px}
+.warn h2{font-size:1.25rem}
+.warn ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.gap ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--body)}
+.signals{border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;background:linear-gradient(145deg,var(--panel),#0c0f12)}
+.signals p{margin:0;max-width:46ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:8px;background:var(--orange);color:#111;text-decoration:none;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--orange)}
+.btn:hover{border-color:var(--orange2)}
+.sources{padding:0;margin:0;list-style:none;display:grid;gap:8px;font-size:.95rem}
+.sources a{overflow-wrap:anywhere}
+.fine{border-top:1px solid var(--line);padding-top:20px;font-size:.88rem;color:var(--muted)}
+.fine p{margin:0 0 8px}
+
+.crumbs{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 18px}
+.crumbs a{color:var(--muted)}
+.related{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.related a{display:block;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--text);font-weight:500}
+.related a:hover{border-color:var(--orange)}
+.list{margin:0;padding-left:20px;display:grid;gap:6px}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="brand" href="/" style="text-decoration:none">TFI <b>Signals</b></a>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="/learn/" aria-current="page">Hub</a></li>
+      <!-- A News link will be added here later. -->
+    </ul>
+  </nav>
+</div>
+
+<main>
+  <header>
+    <p class="crumbs"><a href="/learn/">Hub</a> / Getting found</p>
+    <p class="eyebrow">Getting found</p>
+    <h1>Bing Places and Apple Business: two more places customers find you</h1>
+    <p class="lead">Customers also look for businesses in Bing and in Apple Maps. Each has an official place where owners can manage how the business appears.</p>
+    <div class="meta">
+      <span>Last checked: October 10, 2026</span>
+      <span>Sources: Microsoft and Apple</span>
+      <span>About a 4 minute read</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="bing">
+    <h2 id="bing">Bing Places for Business</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>What it is</h3>
+        <p>Microsoft describes it as "a free online platform where businesses can create and manage their listings." Listings appear in Bing search results and Bing Maps.</p>
+      </div>
+      <div class="card">
+        <h3>Where to go</h3>
+        <p>In October 2025 Microsoft moved the site from bingplaces.com to bing.com/forbusiness. Existing users are redirected when they sign in with their existing login, and existing listings were migrated to the new account.</p>
+      </div>
+      <div class="card">
+        <h3>Importing from Google</h3>
+        <p>Microsoft says it improved how owners import listings from Google, and that the import keeps the business name, hours and contact details. It does not say how the import works or whether the two stay in sync afterward.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="apple">
+    <h2 id="apple">Apple Business (formerly Apple Business Connect)</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>New name</h3>
+        <p>Apple's help page now says "Apple Business Connect is now Apple Business." If a guide or search result uses the old name, it means the same place.</p>
+      </div>
+      <div class="card">
+        <h3>What a location is</h3>
+        <p>A location is a specific place your organization represents in Apple Maps. You can customize the place card, add photos, and promote new items or deals with showcases. Each location belongs to a brand.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="add">
+    <h2 id="add">Adding a location in Apple Business</h2>
+    <ol class="steps">
+      <li><div><strong>Sign in</strong> with a user whose role can manage locations, then go to Brands, then Locations.</div></li>
+      <li><div><strong>Choose Add Location, then Add single location.</strong> Enter the name and the address, and move the map pin if it sits on the wrong building.</div></li>
+      <li><div><strong>Fill in the details.</strong> Apple asks for the default language, display name, primary category, status, phone number with country or region, hours and brand. A website or a Facebook, Instagram or TikTok page is optional.</div></li>
+      <li><div><strong>Verify your organization.</strong> If this is your first location, you must verify your organization and send it to Apple for review. Apple's page gives no review time for this step.</div></li>
+    </ol>
+    <p style="margin-top:14px">Status is either Open or Opening Soon. For Opening Soon, the opening date can't be more than six months away.</p>
+  </section>
+
+  <section aria-labelledby="exist">
+    <h2 id="exist">If your place is already on Apple Maps</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Add the existing location</h3>
+        <p>Search for the name, select it from the results, and adjust the pin if needed. Apple says phone verification may be available for a location that already exists on Maps. The call goes to the number Apple has on record, and you then enter a four digit code.</p>
+      </div>
+      <div class="card">
+        <h3>If another organization manages it</h3>
+        <p>You can request a transfer after adding it. Give a reason and supporting documents, such as a business license or utility bill. Apple says the review can take up to five business days. Make sure your email filters allow mail from all apple.com domains.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="unknown">
+    <h2 id="unknown">What these pages do not say</h2>
+    <ul class="list">
+      <li>Bing: the steps and verification methods for claiming a listing. The Bing help page could not be read in full, so we left the steps out instead of guessing. Follow the instructions Bing shows when you sign in.</li>
+      <li>Bing: whether a listing imported from Google stays in sync with the original.</li>
+      <li>Apple: what a basic listing costs. The Apple Business guide also has a separate Ads on Maps section with budgets and billing, so check before turning on any promotion.</li>
+      <li>Apple: how long organization verification takes.</li>
+    </ul>
+  </section>
+
+  <section class="signals" aria-label="How Signals helps">
+    <p><strong style="color:var(--text)">Not sure if you are listed?</strong> A Signals check looks for your business across public sources and tells you plainly what it did and did not find.</p>
+    <a class="btn" href="https://app.tfi-signals.com/search">Check a business</a>
+  </section>
+
+  <section aria-labelledby="rel">
+    <h2 id="rel">Related guides</h2>
+    <ul class="related">
+      <li><a href="/learn/claim-verify-google-profile/">How to claim and verify your Google Business Profile</a></li>
+      <li><a href="/learn/google-suggested-edits/">Someone suggested a change to your Google Business Profile</a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="src">
+    <h2 id="src">Sources</h2>
+    <ul class="sources">
+      <li><a href="https://blogs.bing.com/search/2025/10/Introducing-the-New-Bing-Places-for-Business-Built-for-Business-Owners,-Powered-by-Research/">Microsoft Bing Blog: Introducing the new Bing Places for Business (October 3, 2025)</a></li>
+      <li><a href="https://support.apple.com/guide/apple-business-connect/intro-abcb205640e7/web">Apple Support: Apple Business Connect is now Apple Business</a></li>
+      <li><a href="https://support.apple.com/guide/business/about-locations-axm993232a60/web">Apple Support: About locations in Apple Business</a></li>
+      <li><a href="https://support.apple.com/guide/business/add-a-single-location-abcb98816a34/web">Apple Support: Add a single location in Apple Business</a></li>
+    </ul>
+  </section>
+
+  <footer class="fine">
+    <p>General information for business owners, not legal or professional advice. TFI Signals is independent and is not affiliated with Microsoft or Apple. Their rules change, so check their help pages for the latest.</p>
+    <p>Thompson Foundry Innovations, Fullerton, California.</p>
+  </footer>
+</main>
+</body>
+</html>

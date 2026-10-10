@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free help for Fullerton business owners: SCORE, SBDC, SBA and the chamber | TFI Signals Hub</title>
+<meta name="description" content="There are several organizations that help small business owners, and some of it costs nothing. Here is what each one says it offers, in its own words, and what the pages do not tell you.">
+<link rel="canonical" href="https://tfi-signals.com/learn/free-help-and-funding/">
+<meta property="og:title" content="Free help for Fullerton business owners: SCORE, SBDC, SBA and the chamber | TFI Signals Hub">
+<meta property="og:description" content="There are several organizations that help small business owners, and some of it costs nothing. Here is what each one says it offers, in its own words, and what the pages do not tell you.">
+<meta property="og:url" content="https://tfi-signals.com/learn/free-help-and-funding/">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: one calm reading column on a dark ground, orange only for labels and the one action. Single dark look by choice, matching tfi-signals.com. */
+:root{
+  color-scheme:dark;
+  --bg:#080a0c; --panel:#101419; --line:#2b333c;
+  --text:#f4f5f6; --body:#c9ced4; --muted:#a9afb7; --orange:#ff6b1a; --orange2:#ff9b61;
+  --amber-bg:#1d150c; --amber-line:#70401f;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);line-height:1.65;padding-inline:16px;padding-block:0 72px}
+a{color:var(--orange2)}
+a:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.bar{max-width:760px;margin:0 auto;padding-block:20px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.95rem;color:var(--text)}
+.brand b{color:var(--orange)}
+/* Navigation is a plain list so a News link can be added beside Hub later. */
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+nav a{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);text-decoration:none}
+nav a[aria-current]{color:var(--orange2)}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:44px;padding-top:44px}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;font-weight:700;color:var(--orange);margin:0 0 14px}
+h1{font-size:clamp(2rem,6vw,2.9rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 18px;color:var(--text);text-wrap:balance}
+h2{font-size:1.5rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 14px;color:var(--text);text-wrap:balance}
+p{margin:0 0 14px}
+.lead{font-size:1.15rem;color:#d6d9de;max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted)}
+.cards{display:grid;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;min-width:0}
+.card h3{margin:0 0 8px;font-size:1.08rem;color:var(--text)}
+.card p{margin:0}
+.card p + p{margin-top:10px}
+.two{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:720px){.two{grid-template-columns:1fr 1fr}}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+ol.steps li::before{content:counter(s);font-family:var(--mono);font-weight:800;color:var(--orange);font-size:1.15rem;line-height:1.5}
+ol.steps strong{color:var(--text)}
+.methods{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.methods li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.methods .m{color:var(--text);font-weight:600}
+.methods .d{color:var(--muted);font-size:.95rem;flex:1 1 280px}
+.warn{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:14px;padding:22px 24px}
+.warn .tag{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:var(--orange2);margin:0 0 8px}
+.warn h2{font-size:1.25rem}
+.warn ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.gap ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--body)}
+.signals{border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;background:linear-gradient(145deg,var(--panel),#0c0f12)}
+.signals p{margin:0;max-width:46ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:8px;background:var(--orange);color:#111;text-decoration:none;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--orange)}
+.btn:hover{border-color:var(--orange2)}
+.sources{padding:0;margin:0;list-style:none;display:grid;gap:8px;font-size:.95rem}
+.sources a{overflow-wrap:anywhere}
+.fine{border-top:1px solid var(--line);padding-top:20px;font-size:.88rem;color:var(--muted)}
+.fine p{margin:0 0 8px}
+
+.crumbs{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 18px}
+.crumbs a{color:var(--muted)}
+.related{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.related a{display:block;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--text);font-weight:500}
+.related a:hover{border-color:var(--orange)}
+.list{margin:0;padding-left:20px;display:grid;gap:6px}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="brand" href="/" style="text-decoration:none">TFI <b>Signals</b></a>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="/learn/" aria-current="page">Hub</a></li>
+      <!-- A News link will be added here later. -->
+    </ul>
+  </nav>
+</div>
+
+<main>
+  <header>
+    <p class="crumbs"><a href="/learn/">Hub</a> / Free help and funding</p>
+    <p class="eyebrow">Free help and funding</p>
+    <h1>Free help for Fullerton business owners: SCORE, SBDC, SBA and the chamber</h1>
+    <p class="lead">There are several organizations that help small business owners, and some of it costs nothing. Here is what each one says it offers, in its own words, and what the pages do not tell you.</p>
+    <div class="meta">
+      <span>Last checked: October 10, 2026</span>
+      <span>Sources: SCORE, SBA, SBDC, North Orange County Chamber</span>
+      <span>About a 4 minute read</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="who">
+    <h2 id="who">Who helps, and what they say</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>SCORE Orange County</h3>
+        <p>SCORE Orange County says it offers free business mentoring across Orange County. Its page says "Mentoring is always free, for the life of your business." It also runs workshops. Some are free and some cost $10, such as an HR session. You can request a mentor on its page or call (714) 550-7369. Its office is in Santa Ana.</p>
+      </div>
+      <div class="card">
+        <h3>Small Business Development Center (SBDC)</h3>
+        <p>The Orange County Inland Empire SBDC, as described on a Rancho Santiago Community College District page, offers "confidential one-on-one expert business consulting," training from webinars to cohort programs, and help with website and search visibility. The page says "all of our services are at no cost to you." It lists (800) 616-7232 and an online appointment link.</p>
+      </div>
+      <div class="card">
+        <h3>The SBA's resource partners</h3>
+        <p>The SBA describes SCORE, SBDCs, Women's Business Centers and Veterans Business Outreach Centers as offering counseling, training and mentoring. It says SCORE mentors give advice at no cost and Women's Business Centers offer "free, to low-cost counseling and training." For veterans and women owners, these centers may be worth a look.</p>
+      </div>
+      <div class="card">
+        <h3>North Orange County Chamber</h3>
+        <p>The chamber represents Buena Park, Fullerton, La Palma and Stanton and calls itself an advocate and resource for the business community. The City of Fullerton lists it at 444 N. Harbor Blvd., Suite 200, Fullerton, (714) 871-3100.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="start">
+    <h2 id="start">Where to start</h2>
+    <ol class="steps">
+      <li><div><strong>Pick the question you have.</strong> A mentor from SCORE suits a general question about running the business. An SBDC consultant suits planning, marketing or financing questions.</div></li>
+      <li><div><strong>Book one appointment.</strong> Use SCORE's request form or the SBDC's appointment link. Bring your questions and any numbers you have.</div></li>
+      <li><div><strong>Ask what is free.</strong> Even where a service is free, a workshop or forum may not be. Ask about cost before you sign up.</div></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="fund">
+    <h2 id="fund">About funding</h2>
+    <p>The SBDC page says its team matches businesses with lenders from a network of more than 100 institutions, and the SBA says its partners can give funding recommendations. Neither page we read describes specific loans, interest rates or approval requirements, so we do not list any here. Ask your SBDC consultant what is available for your situation.</p>
+  </section>
+
+  <section class="card gap" aria-labelledby="unknown">
+    <h2 id="unknown">What these pages do not say</h2>
+    <ul>
+      <li>Whether the SBA's page considers every SBDC service free. It does not state SBDC or veteran center costs, so the SBDC's own page is what we relied on.</li>
+      <li>What membership in the chamber costs or includes. The pages we read do not describe categories, benefits or dues.</li>
+      <li>Which services fit which type of business, or how long the wait for an appointment is.</li>
+      <li>Whether any grant or loan is available to you.</li>
+    </ul>
+  </section>
+
+  <section class="signals" aria-label="How Signals helps">
+    <p><strong style="color:var(--text)">Bring a report to your first appointment.</strong> A Signals check gives a mentor or consultant a plain view of what public sources say about your business, which can save time.</p>
+    <a class="btn" href="https://app.tfi-signals.com/search">Check a business</a>
+  </section>
+
+  <section aria-labelledby="rel">
+    <h2 id="rel">Related guides</h2>
+    <ul class="related">
+      <li><a href="/learn/register-fullerton/">Register your business in Fullerton</a></li>
+      <li><a href="/learn/file-a-dba/">File a DBA (fictitious business name)</a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="src">
+    <h2 id="src">Sources</h2>
+    <ul class="sources">
+      <li><a href="https://www.score.org/orangecounty">SCORE Orange County</a></li>
+      <li><a href="https://rsccd.edu/community/grow_business">Rancho Santiago Community College District: Small Business Development Center</a></li>
+      <li><a href="https://www.sba.gov/local-assistance/resource-partners">U.S. Small Business Administration: Resource Partners</a></li>
+      <li><a href="https://business.fullertonchamber.com/list/member/north-orange-county-chamber-1367">North Orange County Chamber listing</a></li>
+      <li><a href="https://www.cityoffullerton.com/business/doing-business-in-fullerton/local-resources-for-business">City of Fullerton: Local Resources for Business</a></li>
+    </ul>
+  </section>
+
+  <footer class="fine">
+    <p>General information for business owners, not legal or professional advice. TFI Signals is independent and is not affiliated with SCORE, the SBA, any SBDC or any chamber. Services and costs change, so check each organization's page for the latest.</p>
+    <p>Thompson Foundry Innovations, Fullerton, California.</p>
+  </footer>
+</main>
+</body>
+</html>

@@ -35,6 +35,8 @@
   .brand .tag{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:1.3rem;color:var(--text);padding-left:18px;border-left:1px solid var(--line);white-space:nowrap}
   .brand .tag b{color:var(--orange);font-weight:800}
 
+  .site-nav a{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.85rem;color:var(--text);text-decoration:none;padding:12px 4px;border-bottom:2px solid transparent}
+  .site-nav a:hover,.site-nav a:focus-visible{border-color:var(--orange)}
   .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:8px;border:1px solid var(--orange);background:var(--orange);color:#111;text-decoration:none;font-weight:800;font-size:.81rem;letter-spacing:.12em;text-transform:uppercase}
   .btn:hover,.btn:focus{border-color:var(--orange2);outline:none}
   .btn.ghost{background:transparent;border-color:var(--line);color:var(--text)}
@@ -46,6 +48,15 @@
   .hero p.lead{font-size:clamp(1.06rem,1.5vw,1.19rem);color:#c3c7cd;max-width:760px}
   .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;align-items:center}
   .fine{color:var(--muted);font-size:.92rem;margin:18px 0 0}
+
+
+  .preview{padding:0 0 84px}
+  .preview figure{margin:0;max-width:760px}
+  .preview .shotwrap{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel)}
+  .preview img{display:block;width:100%;height:auto}
+  .preview .shotwrap::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(to bottom,rgba(8,10,12,0),var(--bg))}
+  .preview figcaption{color:var(--muted);font-size:.92rem;margin-top:14px;max-width:760px}
+  .preview figcaption a{color:var(--orange2)}
 
   .section{padding:84px 0;border-top:1px solid #171b20}
   .section p{max-width:760px}
@@ -101,6 +112,7 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="TFI Signals by Thompson Foundry Innovations"><img src="https://tfi-systems.com/assets/tfi-logo-transparent.png" alt="Thompson Foundry Innovations"><span class="tag">TFI <b>Signals</b></span></a>
+    <nav class="site-nav" aria-label="Main"><a href="/learn/">Hub</a></nav>
   </div>
 </header>
 
@@ -115,6 +127,13 @@
         <a class="btn ghost" href="#how">How it works</a>
       </div>
       <p class="fine">No account needed. A check usually takes one to three minutes.</p>
+    </div></div>
+
+    <div class="preview"><div class="wrap">
+      <figure>
+        <div class="shotwrap"><img src="signals-report-preview-top.png" width="1640" height="1240" alt="The top of a TFI Signals report for Thompson Foundry Innovations LLC, showing the business name, a summary of what was found, what needs attention, and what to do. The report says no Google Maps listing and no phone number were found."></div>
+        <figcaption>Preview for display purposes only. This is the top of a real report for our own business, simplified. It shows what was not found as plainly as what was. <a href="/learn/how-to-read-a-signals-report/">How to read a Signals report</a></figcaption>
+      </figure>
     </div></div>
 
     <section class="section" id="why"><div class="wrap">
