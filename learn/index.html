@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Signals Hub | TFI Signals</title>
+<title>Learn | TFI Signals</title>
 <meta name="description" content="Short guides for situations owners run into. Each one is checked against official sources and shows when it was last checked.">
 <link rel="canonical" href="https://tfi-signals.com/learn/">
-<meta property="og:title" content="Signals Hub | TFI Signals">
+<meta property="og:title" content="Learn | TFI Signals">
 <meta property="og:description" content="Short guides for situations owners run into. Each one is checked against official sources and shows when it was last checked.">
 <meta property="og:url" content="https://tfi-signals.com/learn/">
 <meta property="og:type" content="article">
@@ -48,17 +48,34 @@ li a.t:hover{color:var(--orange2)}
 .note{border:1px dashed var(--line);border-radius:12px;padding:14px 18px;color:var(--muted);font-size:.92rem}
 .fine{border-top:1px solid var(--line);padding-top:20px;font-size:.88rem;color:var(--muted)}
 .fine p{margin:0 0 8px}
+
+.topbar{position:sticky;top:0;z-index:20;background:rgba(8,10,12,.95);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);margin-inline:-16px;padding-inline:16px;border-bottom:1px solid var(--line)}
+.topbar .bar{border-bottom:0;padding-block:14px}
+.bar{flex-wrap:wrap;row-gap:6px}
+@media(max-width:600px){.topbar .bar{padding-block:8px;row-gap:0}.bar .brand{flex-basis:100%}.gnav{gap:0 16px}.gnav a{padding:8px 2px}.bar .gnav a.gbtn{display:none}}
+html{scroll-padding-top:90px}
+.bar .brand{text-decoration:none}
+.gnav{display:flex;flex-wrap:wrap;align-items:center;gap:2px 22px}
+.gnav a{color:var(--text);text-decoration:none;font-weight:600;font-size:1rem;padding:10px 2px;border-bottom:2px solid transparent}
+.gnav a:hover,.gnav a[aria-current]{border-color:var(--orange)}
+.gnav a.gbtn{background:var(--orange);color:#111;border-radius:8px;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;border:1px solid var(--orange)}
+.gnav a.gbtn:hover{border-color:var(--orange2)}
+.gnav a:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.bar .gnav a{font-family:var(--sans);text-transform:none;letter-spacing:normal;font-size:1rem}
+.bar .gnav a.gbtn{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em}
 </style>
 </head>
 <body>
+<header class="topbar">
 <div class="bar">
-  <a class="brand" href="/" style="text-decoration:none">TFI <b>Signals</b></a>
-  <span class="trail">Hub</span>
+  <a class="brand" href="/">TFI <b>Signals</b></a>
+  <nav class="gnav" aria-label="Main"><a href="/learn/" aria-current="page">Learn</a><a href="/resources/">Resources</a><a href="/about/">About</a><a href="/contact/">Contact</a><a class="gbtn" href="https://app.tfi-signals.com/search">Check a business</a></nav>
 </div>
+</header>
 
 <main>
   <header>
-    <p class="eyebrow">Signals Hub</p>
+    <p class="eyebrow">Learn</p>
     <h1>Plain answers for business owners.</h1>
     <p class="lead">Short guides for situations owners run into. Each one is checked against official sources and shows when it was last checked.</p>
   </header>

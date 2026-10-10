@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>How to read a Signals report | TFI Signals Hub</title>
+<title>How to read a Signals report | TFI Signals</title>
 <meta name="description" content="A report is written in plain sentences. Here is what each part shows, using one of our own.">
 <link rel="canonical" href="https://tfi-signals.com/learn/how-to-read-a-signals-report/">
-<meta property="og:title" content="How to read a Signals report | TFI Signals Hub">
+<meta property="og:title" content="How to read a Signals report | TFI Signals">
 <meta property="og:description" content="A report is written in plain sentences. Here is what each part shows, using one of our own.">
 <meta property="og:url" content="https://tfi-signals.com/learn/how-to-read-a-signals-report/">
 <meta property="og:type" content="article">
@@ -97,22 +97,34 @@ ol.steps strong{color:var(--text)}
 .cap{font-size:.88rem;color:var(--muted);text-align:center;margin:10px 0 0}
 .note{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:14px;padding:18px 22px}
 .note p{margin:0}
+
+.topbar{position:sticky;top:0;z-index:20;background:rgba(8,10,12,.95);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);margin-inline:-16px;padding-inline:16px;border-bottom:1px solid var(--line)}
+.topbar .bar{border-bottom:0;padding-block:14px}
+.bar{flex-wrap:wrap;row-gap:6px}
+@media(max-width:600px){.topbar .bar{padding-block:8px;row-gap:0}.bar .brand{flex-basis:100%}.gnav{gap:0 16px}.gnav a{padding:8px 2px}.bar .gnav a.gbtn{display:none}}
+html{scroll-padding-top:90px}
+.bar .brand{text-decoration:none}
+.gnav{display:flex;flex-wrap:wrap;align-items:center;gap:2px 22px}
+.gnav a{color:var(--text);text-decoration:none;font-weight:600;font-size:1rem;padding:10px 2px;border-bottom:2px solid transparent}
+.gnav a:hover,.gnav a[aria-current]{border-color:var(--orange)}
+.gnav a.gbtn{background:var(--orange);color:#111;border-radius:8px;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;border:1px solid var(--orange)}
+.gnav a.gbtn:hover{border-color:var(--orange2)}
+.gnav a:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.bar .gnav a{font-family:var(--sans);text-transform:none;letter-spacing:normal;font-size:1rem}
+.bar .gnav a.gbtn{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em}
 </style>
 </head>
 <body>
+<header class="topbar">
 <div class="bar">
-  <a class="brand" href="/" style="text-decoration:none">TFI <b>Signals</b></a>
-  <nav aria-label="Main">
-    <ul>
-      <li><a href="/learn/" aria-current="page">Hub</a></li>
-      <!-- A News link will be added here later. -->
-    </ul>
-  </nav>
+  <a class="brand" href="/">TFI <b>Signals</b></a>
+  <nav class="gnav" aria-label="Main"><a href="/learn/" aria-current="page">Learn</a><a href="/resources/">Resources</a><a href="/about/">About</a><a href="/contact/">Contact</a><a class="gbtn" href="https://app.tfi-signals.com/search">Check a business</a></nav>
 </div>
+</header>
 
 <main>
   <header>
-    <p class="crumbs"><a href="/learn/">Hub</a> / Start here</p>
+    <p class="crumbs"><a href="/learn/">Learn</a> / Start here</p>
     <p class="eyebrow">Start here</p>
     <h1>How to read a Signals report</h1>
     <p class="lead">A report is written in plain sentences. Here is what each part shows, using one of our own.</p>

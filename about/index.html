@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About | TFI Signals</title>
+<meta name="description" content="TFI Signals gathers what the public can find about a business into one plain page, including what it could not find. Made by Thompson Foundry Innovations in Fullerton, California.">
+<link rel="canonical" href="https://tfi-signals.com/about/">
+<meta property="og:title" content="About | TFI Signals">
+<meta property="og:description" content="TFI Signals gathers what the public can find about a business into one plain page, including what it could not find. Made by Thompson Foundry Innovations in Fullerton, California.">
+<meta property="og:url" content="https://tfi-signals.com/about/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: one calm reading column on a dark ground, orange only for labels and the one action. Single dark look by choice, matching tfi-signals.com. */
+:root{
+  color-scheme:dark;
+  --bg:#080a0c; --panel:#101419; --line:#2b333c;
+  --text:#f4f5f6; --body:#c9ced4; --muted:#a9afb7; --orange:#ff6b1a; --orange2:#ff9b61;
+  --amber-bg:#1d150c; --amber-line:#70401f;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);line-height:1.65;padding-inline:16px;padding-block:0 72px}
+a{color:var(--orange2)}
+a:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.bar{max-width:760px;margin:0 auto;padding-block:20px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.95rem;color:var(--text)}
+.brand b{color:var(--orange)}
+/* Navigation is a plain list so a News link can be added beside Hub later. */
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+nav a{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);text-decoration:none}
+nav a[aria-current]{color:var(--orange2)}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:44px;padding-top:44px}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;font-weight:700;color:var(--orange);margin:0 0 14px}
+h1{font-size:clamp(2rem,6vw,2.9rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 18px;color:var(--text);text-wrap:balance}
+h2{font-size:1.5rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 14px;color:var(--text);text-wrap:balance}
+p{margin:0 0 14px}
+.lead{font-size:1.15rem;color:#d6d9de;max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted)}
+.cards{display:grid;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;min-width:0}
+.card h3{margin:0 0 8px;font-size:1.08rem;color:var(--text)}
+.card p{margin:0}
+.card p + p{margin-top:10px}
+.two{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:720px){.two{grid-template-columns:1fr 1fr}}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+ol.steps li::before{content:counter(s);font-family:var(--mono);font-weight:800;color:var(--orange);font-size:1.15rem;line-height:1.5}
+ol.steps strong{color:var(--text)}
+.methods{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.methods li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.methods .m{color:var(--text);font-weight:600}
+.methods .d{color:var(--muted);font-size:.95rem;flex:1 1 280px}
+.warn{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:14px;padding:22px 24px}
+.warn .tag{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:var(--orange2);margin:0 0 8px}
+.warn h2{font-size:1.25rem}
+.warn ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.gap ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--body)}
+.signals{border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;background:linear-gradient(145deg,var(--panel),#0c0f12)}
+.signals p{margin:0;max-width:46ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:8px;background:var(--orange);color:#111;text-decoration:none;font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--orange)}
+.btn:hover{border-color:var(--orange2)}
+.sources{padding:0;margin:0;list-style:none;display:grid;gap:8px;font-size:.95rem}
+.sources a{overflow-wrap:anywhere}
+.fine{border-top:1px solid var(--line);padding-top:20px;font-size:.88rem;color:var(--muted)}
+.fine p{margin:0 0 8px}
+
+.crumbs{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 18px}
+.crumbs a{color:var(--muted)}
+.related{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.related a{display:block;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--text);font-weight:500}
+.related a:hover{border-color:var(--orange)}
+.list{margin:0;padding-left:20px;display:grid;gap:6px}
+
+.topbar{position:sticky;top:0;z-index:20;background:rgba(8,10,12,.95);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);margin-inline:-16px;padding-inline:16px;border-bottom:1px solid var(--line)}
+.topbar .bar{border-bottom:0;padding-block:14px}
+.bar{flex-wrap:wrap;row-gap:6px}
+@media(max-width:600px){.topbar .bar{padding-block:8px;row-gap:0}.bar .brand{flex-basis:100%}.gnav{gap:0 16px}.gnav a{padding:8px 2px}.bar .gnav a.gbtn{display:none}}
+html{scroll-padding-top:90px}
+.bar .brand{text-decoration:none}
+.gnav{display:flex;flex-wrap:wrap;align-items:center;gap:2px 22px}
+.gnav a{color:var(--text);text-decoration:none;font-weight:600;font-size:1rem;padding:10px 2px;border-bottom:2px solid transparent}
+.gnav a:hover,.gnav a[aria-current]{border-color:var(--orange)}
+.gnav a.gbtn{background:var(--orange);color:#111;border-radius:8px;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;border:1px solid var(--orange)}
+.gnav a.gbtn:hover{border-color:var(--orange2)}
+.gnav a:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+.bar .gnav a{font-family:var(--sans);text-transform:none;letter-spacing:normal;font-size:1rem}
+.bar .gnav a.gbtn{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em}
+
+.res{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.res li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:4px}
+.res a.t{color:var(--text);font-weight:600;text-decoration:none;overflow-wrap:anywhere}
+.res a.t:hover{color:var(--orange2);text-decoration:underline}
+.res .d{color:var(--muted);font-size:.95rem}
+.res .g{font-size:.88rem}
+</style>
+</head>
+<body>
+<header class="topbar">
+<div class="bar">
+  <a class="brand" href="/">TFI <b>Signals</b></a>
+  <nav class="gnav" aria-label="Main"><a href="/learn/">Learn</a><a href="/resources/">Resources</a><a href="/about/" aria-current="page">About</a><a href="/contact/">Contact</a><a class="gbtn" href="https://app.tfi-signals.com/search">Check a business</a></nav>
+</div>
+</header>
+<main>
+  <header>
+    <p class="eyebrow">About</p>
+    <h1>About TFI Signals</h1>
+    <p class="lead">TFI Signals gathers what the public can find about a business into one plain page, including what it could not find, so an owner can see what is out there and keep track of it.</p>
+  </header>
+  <section>
+    <h2>Why we built this</h2>
+    <p>Running a business leaves little time to keep track of every profile and listing with your name on it. Some are yours. Some were created by others. Some are out of date. When customers search, they see whatever is there, not whatever you intended.</p>
+    <p>We built Signals to gather what is public into one page you can read in a few minutes, so you can see what is there, what is missing, and what is worth a closer look.</p>
+  </section>
+  <section>
+    <h2>What Signals will not do</h2>
+    <ul class="list">
+      <li>It reads public information only. It never signs in to anything, and it does not change your business or any listing.</li>
+      <li>Results can be incomplete or mistaken. Some pages, such as Facebook and LinkedIn, cannot be read directly, so a profile that is not shown may simply be one we could not see.</li>
+      <li>It does not judge your business. It shows what the public sources say at the time of the check.</li>
+      <li>We are a small startup, so some sources are not practical for us to check yet. We will add more over time.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Who is behind it</h2>
+    <p>TFI Signals is made by Thompson Foundry Innovations in Fullerton, California, and is powered by TFI Discover Engine. We research practical challenges facing local businesses and build technology and services in response to what the evidence shows. Signals is one way we are learning, and one way we hope to be useful.</p>
+    <p>We are an early, small project starting in Fullerton. Anyone can run a check, and if you are outside Fullerton, we would still like to hear how it went.</p>
+  </section>
+  <section>
+    <h2>About the Learn and Resources pages</h2>
+    <p>The guides in Learn are written from official sources, show when they were last checked, and say plainly what the official pages do not tell you. Resources is a list of official places to go. Neither is legal or professional advice.</p>
+  </section>
+  <section class="signals"><p><strong style="color:var(--text)">Curious what is out there about your business?</strong> A check is free and needs no account.</p><a class="btn" href="https://app.tfi-signals.com/search">Check a business</a></section>
+  <footer class="fine">
+    <p>TFI Signals is independent and is not affiliated with the companies and agencies it mentions.</p>
+    <p>Thompson Foundry Innovations, Fullerton, California.</p>
+  </footer>
+</main>
+</body>
+</html>
