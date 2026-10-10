@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Signals Business News: sourced developments and practical insights for independent business owners.">
+  <title>Business News | TFI Signals</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b0c0e;--panel:#151619;--line:#303136;--text:#f5f5f4;--muted:#aaa9a6;--orange:#ef913c}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit}a:hover{color:var(--orange)}.wrap{width:min(1100px,calc(100% - 40px));margin:auto}
+    header{border-bottom:1px solid var(--line)}header .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0}.brand{text-decoration:none;font-weight:800;letter-spacing:.08em}.brand span,.eyebrow{color:var(--orange)}nav{display:flex;gap:22px;flex-wrap:wrap}nav a{font-size:.9rem;text-decoration:none;color:#c7c7c7}nav a[aria-current]{color:var(--orange)}
+    main{padding:76px 0 100px}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}h1{font-size:clamp(2.6rem,7vw,5.2rem);line-height:1.06;letter-spacing:-.05em;margin:16px 0 22px;max-width:800px}h2{font-size:1.5rem;line-height:1.3}.lead{max-width:650px;color:var(--muted);font-size:1.15rem}.intro{padding-bottom:55px;border-bottom:1px solid var(--line)}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:36px 0 24px;flex-wrap:wrap}.toolbar h2{margin:0}.note{font-size:.85rem;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.story{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:27px;display:flex;flex-direction:column;gap:15px}.story:first-child{grid-column:1/-1}.meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:.78rem;color:var(--muted)}.category{color:var(--orange);text-transform:uppercase;letter-spacing:.09em;font-weight:800}.story h3{font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.27;letter-spacing:-.025em;margin:0}.story p{margin:0;color:#c4c4c2}.story strong{color:var(--text)}.story .bottom{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:.85rem}.source{color:var(--orange);text-underline-offset:3px}.state{padding:24px;border:1px solid var(--line);border-radius:10px;color:var(--muted)}.disclosure{margin-top:38px;padding-top:22px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.85rem}
+    @media(max-width:700px){header .wrap{align-items:flex-start;flex-direction:column}nav{gap:15px}main{padding-top:50px}.grid{grid-template-columns:1fr}.story:first-child{grid-column:auto}.story{padding:22px}}
+  </style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="/">TFI <span>SIGNALS</span></a><nav aria-label="Main navigation"><a href="/">Signals</a><a href="/learn/">Learn</a><a href="/news/" aria-current="page">News</a></nav></div></header>
+<main class="wrap"><section class="intro"><div class="eyebrow">Signals Business News</div><h1>Business news that matters.</h1><p class="lead">Important developments, useful tools, and opportunities for independent business owners. Selected for relevance, with sources you can check.</p></section><section aria-labelledby="latest-title"><div class="toolbar"><h2 id="latest-title">Current highlights</h2><span id="updated" class="note" aria-live="polite"></span></div><div id="stories" class="grid" aria-live="polite"><div class="state">Loading stories…</div></div></section><p class="disclosure">Signals Business News summarizes publicly available information for general education. Check original sources for details, eligibility, deadlines, and updates. News summaries are not legal, financial, or professional advice.</p></main>
+<footer><div class="wrap">© <span id="year"></span> Thompson Foundry Innovations · <a href="/">TFI Signals</a></div></footer>
+<script>
+'use strict';
+document.getElementById('year').textContent=new Date().getFullYear();
+const root=document.getElementById('stories'),updated=document.getElementById('updated');
+const text=(tag,value,cls)=>{const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=value;return el};
+const date=s=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(s||''))return '';const d=new Date(s+'T12:00:00Z');return Number.isNaN(d.getTime())?'':d.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric',timeZone:'UTC'})};
+function validURL(s){try{const u=new URL(s);return ['https:','http:'].includes(u.protocol)?u.href:null}catch{return null}}
+function render(items){root.replaceChildren();if(!items.length){root.append(text('div','No news stories are published yet. Please check back soon.','state'));return}
+ for(const item of items.slice(0,5)){
+  const card=document.createElement('article');card.className='story';const meta=document.createElement('div');meta.className='meta';meta.append(text('span',item.category||'Business', 'category'));if(date(item.published))meta.append(text('span',date(item.published)));card.append(meta);
+  card.append(text('h3',item.headline));card.append(text('p',item.summary));if(item.why_it_matters){const p=document.createElement('p');p.append(text('strong','Why it matters: '),document.createTextNode(item.why_it_matters));card.append(p)}if(item.action){const p=document.createElement('p');p.append(text('strong','What you can do: '),document.createTextNode(item.action));card.append(p)}
+  const bottom=document.createElement('div');bottom.className='bottom';const url=validURL(item.source_url);if(url){const a=text('a',item.source_name||'Original source','source');a.href=url;a.target='_blank';a.rel='noopener noreferrer';bottom.append(a)}if(date(item.verified)){bottom.append(text('span',' · Verified '+date(item.verified)))}card.append(bottom);root.append(card)
+ }
+}
+fetch('./news.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('News file unavailable');return r.json()}).then(data=>{if(!data||!Array.isArray(data.stories))throw Error('Invalid news data');const live=data.stories.filter(s=>s&&s.status==='published'&&s.headline&&s.summary&&validURL(s.source_url));live.sort((a,b)=>(b.priority||0)-(a.priority||0)||(b.published||'').localeCompare(a.published||''));render(live);if(date(data.last_updated))updated.textContent='Last updated '+date(data.last_updated)}).catch(()=>{root.replaceChildren(text('div','News is temporarily unavailable. Please check back later.','state'))});
+</script>
+</body></html>

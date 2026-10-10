@@ -1,0 +1,19 @@
+{
+  "last_updated": "",
+  "stories": [
+    {
+      "id": "sample-not-for-publication",
+      "status": "draft",
+      "priority": 1,
+      "category": "Technology",
+      "headline": "EXAMPLE ONLY — Replace with a verified news headline",
+      "summary": "Write a short, factual summary of the original announcement here.",
+      "why_it_matters": "Explain the specific relevance to independent business owners.",
+      "action": "Provide a practical next step only when supported by the source.",
+      "source_name": "Original publisher",
+      "source_url": "https://example.com/",
+      "published": "",
+      "verified": ""
+    }
+  ]
+}
